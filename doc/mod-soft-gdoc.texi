@@ -1,0 +1,26 @@
+@deftypefun {void} {mod_soft_is_GPL_compatible} ()
+
+Defined to tell mod_soft is compatible with GNU General Public License
+Of course it is. This function does nothing, but the fact it's declared
+makes its GPL compatibility obvious. Having this declared is required.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {lw6sys_module_pedigree_t *} {mod_soft_get_pedigree} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Returns the pedigree for mod-soft, giving details about the module,
+including name, description, licence, date/time of compilation.
+
+@strong{Return value:}  dynamically allocated object.
+@end deftypefun
+
+@deftypefun {lw6gfx_backend_t *} {mod_soft_create_backend} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Creates a mod-soft backend.
+
+@strong{Return value:}  backend pointer.
+@end deftypefun
+

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<liquidwar6>
+  <int key="frequency" value="44100" />
+  <int key="bits" value="16" />
+  <int key="channels" value="2" />
+  <int key="chunksize" value="4096" />
+  <float key="water-pan1" value="0.1" />
+  <float key="water-pan2" value="0.9" />
+  <string key="file-splash" value="fanfare.ogg" />
+  <string key="file-valid" value="menuvalid.ogg" />
+  <string key="file-select" value="menuselect.ogg" />
+  <string key="file-no" value="endbell-low.ogg" />
+  <string key="file-start" value="endbell-low.ogg" />
+  <string key="file-death" value="teamdie.ogg" />
+  <string key="file-bell"  value="endbell-long.ogg" />
+  <string key="file-score" value="endbell-low.ogg" />
+  <string key="file-hello" value="endbell-low.ogg" />
+  <string key="file-goodbye" value="endbell-low.ogg" />
+  <string key="file-water1" value="boiling-water-teabag-mug.ogg" />
+  <string key="file-water2" value="faucet-water-into-sink.ogg" />
+  <string key="file-water3" value="rivulet.ogg" />
+  <string key="file-water4" value="storm.ogg" />
+  <string key="file-water5" value="toilet-flush.ogg" />
+  <string key="file-water6" value="waterinmuginsink.ogg" />
+</liquidwar6>

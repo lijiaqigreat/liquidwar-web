@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Refresh" content="%d; url=%s" />
+    <title>%s</title>
+    <meta name="Author" content="%s" />
+    <meta name="Description" content="%s" />
+    <meta name="Keywords" content="%s" />
+    <meta name="Copyright" content="%s" />
+    <meta name="Generator" content="%s" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script type="text/javascript">
+      function lw6RefreshIndex() {
+        window.location.href="%s";
+      }
+      function lw6RefreshScreenshot() {
+        var screenshot;
+        var dummy;
+        var src;
+
+        window.setTimeout("lw6RefreshScreenshot();",%d);
+        dummy=Math.floor(Math.random()*%d); 
+        screenshot=document.getElementById("lw6_screenshot");
+        src="%s?dummy="+dummy;
+        screenshot.src=src;
+      }
+      function lw6SetRefresh() {
+        window.setTimeout("lw6RefreshIndex();",%d);
+        window.setTimeout("lw6RefreshScreenshot();",%d);
+      }
+    </script>
+    <noscript>
+      <!-- Refresh HTTP header should be set anyway, so no JS isn't that bad -->
+    </noscript>
+  </head>
+  <body onload="lw6SetRefresh();">
+    <h1>%s</h1>
+    <p>
+      %s
+    </p>
+    <p>
+      This is a <a href="http://www.gnu.org/software/liquidwar6/">Liquid War 6</a> node.
+      In order to use this server and connect to it, you need to install and run the game.
+      However this web interface allows you to browse games and see what's going on
+      without running the program for real. For more informations, see
+      <a href="http://www.gnu.org/software/liquidwar6/manual/html_node">Liquid War 6 manual</a>.
+    </p>
+    <hr />
+    <img src="screenshot.jpeg?dummy=%d" alt="Screenshot" id="lw6_screenshot" />
+    <hr />
+    <h2><a href="info.txt">Node info</a></h2>
+    <ul>
+      <li>Version: %s, codename: "%s"</li>
+      <li>Uptime: %s</li>
+      <li>Level: "%s"</li>
+      <li>Bench: %d, required: %d</li>
+      <li>%d/%d colors, %d/%d cursors, %d/%d nodes</li>
+    </ul>	 
+    <hr />
+    <h2><a href="list.txt">Other nodes</a></h2>
+    <p>
+      %s
+    </p>
+    <hr />
+    <p>
+      <a href="http://www.gnu.org/software/liquidwar6/">Liquid War 6</a> is a unique multiplayer wargame.
+      <br />
+      Copyright (C)  2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015  Christian Mauduit <a href="mailto:ufoot@ufoot.org">&lt;ufoot@ufoot.org&gt;</a>
+    </p>
+    <p>
+      This program is free software; you can redistribute it and/or modify
+      it under the terms of the <a href="gpl.txt">GNU General Public License</a> as published by
+      the Free Software Foundation, either version 3 of the License, or
+      (at your option) any later version.
+    </p>
+    <p>
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+    </p>
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
+  </p>
+  </body>
+</html>

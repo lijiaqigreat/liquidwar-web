@@ -1,0 +1,87 @@
+@deftypefun {void} {lw6cns_handler_callback} (char * @var{line})
+@var{line}:  the input line
+
+The global console handler. Because readline does not, or at
+least, because I did not find any proper way to pass it a general
+pointer along with the string, and since we need @code{sys_context}
+pretty much everywhere, we rely on using this handler which,
+in turn, calls the handler passed to @code{lw6cns_handler_install}
+with @code{sys_context} added as a first argument.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6cns_handler_install} (lw6sys_context_t * @var{sys_context}, lw6cns_callback_func_t @var{callback})
+@var{sys_context}:  global system context
+
+@var{callback}:  handler function.
+
+Installs a console handler.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6cns_handler_poll} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Polling function for console, must be called on a regular basis.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6cns_handler_remove} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Remove console handler.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6cns_history_add_if_needed} (lw6sys_context_t * @var{sys_context}, char * @var{line})
+@var{sys_context}:  global system context
+
+@var{line}:  line to add
+
+Adds a line to the console history, won't add it if
+it's NULL or empty.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6cns_console_support} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Tells wether console is supported.
+
+@strong{Return value:}  1 if console can be enabled, 0 if not
+@end deftypefun
+
+@deftypefun {int} {lw6cns_term_support} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Tells wether program is likely to have proper term (xterm, Linux console) support.
+
+@strong{Return value:}  1 if has validated TERM support, 0 if not
+@end deftypefun
+
+@deftypefun {int} {lw6cns_test_register} (lw6sys_context_t * @var{sys_context}, int @var{mode})
+@var{sys_context}:  global system context
+
+@var{mode}:  test mode (bitmask)
+
+Registers all tests for the libcns module.
+
+@strong{Return value:}  1 if test is successfull, 0 on error.
+@end deftypefun
+
+@deftypefun {int} {lw6cns_test_run} (lw6sys_context_t * @var{sys_context}, int @var{mode})
+@var{sys_context}:  global system context
+
+@var{mode}:  test mode (bitmask)
+
+Runs the @code{cns} module test suite, testing most (if not all...)
+functions.
+
+@strong{Return value:}  1 if test is successfull, 0 on error.
+@end deftypefun
+

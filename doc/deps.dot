@@ -1,0 +1,227 @@
+digraph g {
+	bot -> dyn
+	bot -> pil
+subgraph cluster_bot {
+	label="bot backends"	
+	bot
+	"mod-brute"
+	"mod-follow"
+	"mod-idiot"
+	"mod-random"
+}
+	bot -> "mod-brute" [dir=both]
+	bot -> "mod-follow" [dir=both]
+	bot -> "mod-idiot" [dir=both]
+	bot -> "mod-random" [dir=both]
+	cfg -> hlp
+	cfg -> expat
+	cli -> dyn
+	cli -> msg
+	cli -> net
+subgraph cluster_cli {
+	label="cli backends"
+	cli
+	cli -> "mod-tcp" [dir=both]
+	cli -> "mod-udp" [dir=both]
+	cli -> "mod-http" [dir=both]
+}
+	"mod-http" -> curl
+	cns -> sys
+	cnx -> glb
+	cns -> readline
+	dat -> msg
+	dsp -> gfx
+	dyn -> sys
+	dyn -> ltdl
+	gen -> map
+	gfx -> dyn
+	gfx -> vox
+	gfx -> pil
+	gfx -> cns
+subgraph cluster_gfx {
+	label="gfx backends"
+	gfx
+	gfx -> "mod-gl1" [dir=both]
+	gfx -> "mod-gles2" [dir=both]
+	gfx -> "mod-soft" [dir=both]
+	gfx -> "mod-caca" [dir=both]
+	"mod-gl1" -> "shared-sdl"
+	"mod-gles2" -> "shared-sdl"
+	"mod-soft" -> "shared-sdl"
+}
+	"mod-gl1" [style=filled,fillcolor=lightgrey]
+	"mod-gl1" -> GL
+	"mod-gles2" -> GLESv2
+	"shared-sdl" -> SDL
+	"shared-sdl" -> SDL_image
+	"shared-sdl" -> SDL_ttf
+	glb -> sys
+	glb -> gnulib
+	gui -> map
+	gui -> cfg
+	hlp -> sys
+	img -> cfg
+	img -> jpeg
+	ker [style=filled,fillcolor=lightgrey]
+	ker -> map
+	ker -> gomp
+	ldr -> cfg
+	ldr -> map
+	ldr -> png
+	ldr -> jpeg
+	map -> sys
+	msg -> cnx
+	msg -> nod
+	msg -> zlib
+	net -> cfg
+	net -> glb
+	nod -> sys
+	p2p [style=filled,fillcolor=lightgrey]
+	p2p -> dat
+	p2p -> cli
+	p2p -> srv
+	p2p -> sqlite
+	pil -> ker
+	scm -> hlp
+	scm -> guile
+	sim -> bot
+	snd -> dyn
+	snd -> cfg
+subgraph cluster_snd {
+        label="snd backends"
+	snd
+	snd -> "mod-ogg" [dir=both]
+	snd -> "mod-csound" [dir=both]
+} 
+	"mod-ogg" -> SDL
+	"mod-ogg" -> SDL_mixer
+	"mod-csound" -> csound
+	srv -> dyn
+	srv -> msg
+	srv -> net
+subgraph cluster_srv {
+        label="srv backends"
+	srv
+	srv -> "mod-tcpd" [dir=both]
+	srv -> "mod-udpd" [dir=both]
+	srv -> "mod-httpd" [dir=both]
+}
+	sys [style=filled,fillcolor=lightgrey]
+	sys -> def
+	sys -> pthread
+	sys -> math
+
+	tsk -> ldr
+	tsk -> gen
+	vox -> gui
+	vox -> ker
+	vox -> mat
+	mat -> sys
+
+	liquidwar6 [style=filled,fillcolor=lightgrey]
+	liquidwar6 -> sim
+	liquidwar6 -> dsp
+	liquidwar6 -> img
+	liquidwar6 -> tsk
+	liquidwar6 -> cns
+	liquidwar6 -> p2p
+	liquidwar6 -> snd
+
+	liquidwar6 -> scm
+subgraph cluster_script {
+        label="Guile scripts"
+	scm -> script	
+}
+	script -> liquidwar6
+
+	SDL_image -> jpeg
+	SDL_image -> png
+
+	expat -> data
+	jpeg -> data
+	png -> data
+	SDL_ttf -> data
+	SDL_mixer -> data
+
+	"mod-brute" [shape=hexagon]
+	"mod-follow" [shape=hexagon]
+	"mod-idiot" [shape=hexagon]
+	"mod-random" [shape=hexagon]
+	"mod-tcp" [shape=hexagon]
+	"mod-udp" [shape=hexagon]
+	"mod-http" [shape=hexagon]
+	"mod-gl" [shape=hexagon]
+	"mod-ogg" [shape=hexagon]
+	"mod-csound" [shape=hexagon]
+	"mod-tcpd" [shape=hexagon]
+	"mod-udpd" [shape=hexagon]
+	"mod-httpd" [shape=hexagon]
+
+	script [shape=triangle,style=filled,fillcolor=lightgrey]
+	data [shape=triangle,style=filled,fillcolor=lightgrey]
+
+	csound [color=grey]
+	csound [fontcolor=grey]
+	curl [color=grey]
+	curl [fontcolor=grey]
+	expat [color=grey]
+	expat [fontcolor=grey]
+	GL [color=grey]
+	GL [fontcolor=grey]
+	gnulib [color=grey]
+	gnulib [fontcolor=grey]
+	gomp [color=grey]
+	gomp [fontcolor=grey]
+	guile [color=grey]
+	guile [fontcolor=grey]
+	jpeg [color=grey]
+	jpeg [fontcolor=grey]
+	ltdl [color=grey]
+	ltdl [fontcolor=grey]
+	math [color=grey]
+	math [fontcolor=grey]
+	png [color=grey]
+	png [fontcolor=grey]
+	pthread [color=grey]
+	pthread [fontcolor=grey]
+	readline [color=grey]	
+	readline [fontcolor=grey]	
+	SDL [color=grey]
+	SDL [fontcolor=grey]
+	SDL_image [color=grey]
+	SDL_image [fontcolor=grey]
+	SDL_mixer [color=grey]
+	SDL_mixer [fontcolor=grey]
+	SDL_ttf [color=grey]
+	SDL_ttf [fontcolor=grey]
+	sqlite [color=grey]
+	sqlite [fontcolor=grey]
+	zlib [color=grey]
+	zlib [fontcolor=grey]
+
+subgraph cluster_ext {
+	 label="external libraries"
+	 color=grey
+	 fontcolor=grey
+	 csound
+	 curl
+	 expat
+	 GL
+	 gnulib
+	 gomp
+	 guile
+	 jpeg
+	 ltdl
+	 math
+	 png
+	 pthread
+	 readline
+	 SDL
+	 SDL_image
+	 SDL_mixer
+	 SDL_ttf
+	 sqlite
+	 zlib
+}
+}
+

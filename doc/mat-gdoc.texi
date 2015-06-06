@@ -1,0 +1,1999 @@
+@deftypefun {void} {lw6mat_dmat2_zero} (lw6mat_dmat2_t * @var{dmat2})
+@var{dmat2}:  the matrix to initialize.
+
+Fills the matrix with zeros, regardless of what was there before.
+Internally, does a memset the only advantage is that this function
+should use the right sizeof and therefore avoids typo errors.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat2_identity} (lw6mat_dmat2_t * @var{dmat2})
+@var{dmat2}:  the matrix to initialize.
+
+Loads the matrix with the identity matrix, that is, zero everywhere
+but one on the main diag.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat2_translation} (lw6mat_dmat2_t * @var{dmat2}, double @var{d})
+@var{dmat2}:  the matrix to initialize.
+
+@var{d}:  value which defines the translation.
+
+Loads the matrix with a translation transformation matrix.
+By multiplicating by this matrix, a translation is done.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat2_scale} (lw6mat_dmat2_t * @var{dmat2}, double @var{d})
+@var{dmat2}:  the matrix to initialize.
+
+@var{d}:  value used to scale matrix.
+
+Loads the matrix with a scale matrix. By multiplicating by this
+matrix, a scaling is done.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dmat2_is_same} (const lw6mat_dmat2_t * @var{dmat2_a}, const lw6mat_dmat2_t * @var{dmat2_b})
+@var{dmat2_a}:  1st matrix to compare
+
+@var{dmat2_b}:  2nd matrix to compare
+
+Compares two matrix, returns true if they are equal.
+
+@strong{Return value:}  1 if equal, 0 if different.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat2_transpose} (lw6mat_dmat2_t * @var{dmat2})
+@var{dmat2}:  the matrix to transpose
+
+Transposes the matrix, that is, inverts rows and columns.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {double} {lw6mat_dmat2_det} (const lw6mat_dmat2_t * @var{dmat2})
+@var{dmat2}:  the matrix used to calculate the determinant
+
+Calulates the determinant of the matrix.
+
+@strong{Return value:}  the determinant.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat2_mul_scale} (lw6mat_dmat2_t * @var{dmat2}, double @var{f})
+@var{dmat2}:  matrix to modify
+
+@var{f}:  scale factor
+
+Scales the matrix by multiplying all its members by a scalar value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dmat2_inv} (lw6sys_context_t * @var{sys_context}, lw6mat_dmat2_t * @var{dmat2_dst}, const lw6mat_dmat2_t * @var{dmat2_src})
+@var{sys_context}:  global system context
+
+@var{dmat2_dst}:  the matrix inverted
+
+@var{dmat2_src}:  the matrix to invert
+
+Inverts a matrix. Probably not the fastest implementation, but
+should work in all cases. Use hardware accelerated API such as
+OpenGL on dedicated hardware if you want power.
+
+@strong{Return value:}  1 if inverted, 0 if error, typically if determinant was 0, matrix
+can not be inverted.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat2_mul_dmat2} (lw6mat_dmat2_t * @var{dmat2}, const lw6mat_dmat2_t * @var{dmat2_a}, const lw6mat_dmat2_t * @var{dmat2_b})
+@var{dmat2}:  the result matrix
+
+@var{dmat2_a}:  the 1st matrix to multiply, on the left
+
+@var{dmat2_b}:  the 2nd matrix to multiply, on the right
+
+Classic matrix multiplication.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat2_mul_dvec2} (lw6mat_dvec2_t * @var{dvec2_dst}, const lw6mat_dmat2_t * @var{dmat2}, const lw6mat_dvec2_t * @var{dvec2_src})
+@var{dvec2_dst}:  the result vector
+
+@var{dvec2_src}:  the source vector
+
+Multiplication of matrix by vector. The result is a
+vector, the convention used is that of OpenGL, matrix are
+column major and vector are columns, that is, should you
+do it on a paper, vector is placed vertically, on the right of
+matrix. The other multiplication is not implemented, transposing
+the matrix will do it the other way if you wish.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {char *} {lw6mat_dmat2_repr} (lw6sys_context_t * @var{sys_context}, const lw6mat_dmat2_t * @var{dmat2})
+@var{sys_context}:  global system context
+
+Gives a readable version of the matrix, the representation
+uses newlines, with a different line for each row
+
+@strong{Return value:}  newly allocated string
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat3_zero} (lw6mat_dmat3_t * @var{dmat3})
+@var{dmat3}:  the matrix to initialize.
+
+Fills the matrix with zeros, regardless of what was there before.
+Internally, does a memset the only advantage is that this function
+should use the right sizeof and therefore avoids typo errors.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat3_identity} (lw6mat_dmat3_t * @var{dmat3})
+@var{dmat3}:  the matrix to initialize.
+
+Loads the matrix with the identity matrix, that is, zero everywhere
+but one on the main diag.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat3_translation} (lw6mat_dmat3_t * @var{dmat3}, const lw6mat_dvec2_t * @var{dvec2})
+@var{dmat3}:  the matrix to initialize.
+
+@var{dvec2}:  vector which defines the translation.
+
+Loads the matrix with a translation transformation matrix.
+By multiplicating by this matrix, a translation is done.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat3_scale} (lw6mat_dmat3_t * @var{dmat3}, const lw6mat_dvec2_t * @var{dvec2})
+@var{dmat3}:  the matrix to initialize.
+
+@var{dvec2}:  value used to scale matrix.
+
+Loads the matrix with a scale matrix. By multiplicating by this
+matrix, a scaling is done.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat3_rot} (lw6mat_dmat3_t * @var{dmat3}, double @var{r})
+@var{dmat3}:  the matrix to initialize.
+
+@var{r}:  value used to for the rotation, angle in radians.
+
+Loads the matrix with a rotation matrix. By multiplicating by this
+matrix, a rotation is done, over a virtual Z axis such as Z is the
+cross product of X and Y.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dmat3_is_same} (const lw6mat_dmat3_t * @var{dmat3_a}, const lw6mat_dmat3_t * @var{dmat3_b})
+@var{dmat3_a}:  1st matrix to compare
+
+@var{dmat3_b}:  2nd matrix to compare
+
+Compares two matrix, returns true if they are equal.
+
+@strong{Return value:}  1 if equal, 0 if different.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat3_transpose} (lw6mat_dmat3_t * @var{dmat3})
+@var{dmat3}:  the matrix to transpose
+
+Transposes the matrix, that is, inverts rows and columns.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {double} {lw6mat_dmat3_det} (const lw6mat_dmat3_t * @var{dmat3})
+@var{dmat3}:  the matrix used to calculate the determinant
+
+Calulates the determinant of the matrix.
+
+@strong{Return value:}  the determinant.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat3_mul_scale} (lw6mat_dmat3_t * @var{dmat3}, double @var{f})
+@var{dmat3}:  matrix to modify
+
+@var{f}:  scale factor
+
+Scales the matrix by multiplying all its members by a scalar value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dmat3_inv} (lw6sys_context_t * @var{sys_context}, lw6mat_dmat3_t * @var{dmat3_dst}, const lw6mat_dmat3_t * @var{dmat3_src})
+@var{sys_context}:  global system context
+
+@var{dmat3_dst}:  the matrix inverted
+
+@var{dmat3_src}:  the matrix to invert
+
+Inverts a matrix. Probably not the fastest implementation, but
+should work in all cases. Use hardware accelerated API such as
+OpenGL on dedicated hardware if you want power.
+
+@strong{Return value:}  1 if inverted, 0 if error, typically if determinant was 0, matrix
+can not be inverted.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat3_mul_dmat3} (lw6mat_dmat3_t * @var{dmat3}, const lw6mat_dmat3_t * @var{dmat3_a}, const lw6mat_dmat3_t * @var{dmat3_b})
+@var{dmat3}:  the result matrix
+
+@var{dmat3_a}:  the 1st matrix to multiply, on the left
+
+@var{dmat3_b}:  the 2nd matrix to multiply, on the right
+
+Classic matrix multiplication.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat3_mul_dvec3} (lw6mat_dvec3_t * @var{dvec3_dst}, const lw6mat_dmat3_t * @var{dmat3}, const lw6mat_dvec3_t * @var{dvec3_src})
+@var{dvec3_dst}:  the result vector
+
+@var{dvec3_src}:  the source vector
+
+Multiplication of matrix by vector. The result is a
+vector, the convention used is that of OpenGL, matrix are
+column major and vector are columns, that is, should you
+do it on a paper, vector is placed vertically, on the right of
+matrix. The other multiplication is not implemented, transposing
+the matrix will do it the other way if you wish.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat3_mul_dvec2} (lw6mat_dvec2_t * @var{dvec2_dst}, const lw6mat_dmat3_t * @var{dmat3}, const lw6mat_dvec2_t * @var{dvec2_src})
+@var{dvec2_dst}:  the result vector
+
+Multiplication of matrix by vector. The result is a
+vector, the convention used is that of OpenGL, matrix are
+column major and vector are columns, that is, should you
+do it on a paper, vector is placed vertically, on the right of
+matrix. The other multiplication is not implemented, transposing
+the matrix will do it the other way if you wish.
+The vector, here, is smaller than the matrix, the last element
+is supposed to be 1, this is how one implements translation through
+multiplication.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {char *} {lw6mat_dmat3_repr} (lw6sys_context_t * @var{sys_context}, const lw6mat_dmat3_t * @var{dmat3})
+@var{sys_context}:  global system context
+
+Gives a readable version of the matrix, the representation
+uses newlines, with a different line for each row
+
+@strong{Return value:}  newly allocated string
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_zero} (lw6mat_dmat4_t * @var{dmat4})
+@var{dmat4}:  the matrix to initialize.
+
+Fills the matrix with zeros, regardless of what was there before.
+Internally, does a memset the only advantage is that this function
+should use the right sizeof and therefore avoids typo errors.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_identity} (lw6mat_dmat4_t * @var{dmat4})
+@var{dmat4}:  the matrix to initialize.
+
+Loads the matrix with the identity matrix, that is, zero everywhere
+but one on the main diag.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_translation} (lw6mat_dmat4_t * @var{dmat4}, const lw6mat_dvec3_t * @var{dvec3})
+@var{dmat4}:  the matrix to initialize.
+
+@var{dvec3}:  vector which defines the translation.
+
+Loads the matrix with a translation transformation matrix.
+By multiplicating by this matrix, a translation is done.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_scale} (lw6mat_dmat4_t * @var{dmat4}, const lw6mat_dvec3_t * @var{dvec3})
+@var{dmat4}:  the matrix to initialize.
+
+@var{dvec3}:  value used to scale matrix.
+
+Loads the matrix with a scale matrix. By multiplicating by this
+matrix, a scaling is done.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_rot_x} (lw6mat_dmat4_t * @var{dmat4}, double @var{r})
+@var{dmat4}:  the matrix to initialize.
+
+@var{r}:  value used to for the rotation, angle in radians.
+
+Loads the matrix with a rotation matrix. By multiplicating by this
+matrix, a rotation is done, over the X axis.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_rot_y} (lw6mat_dmat4_t * @var{dmat4}, double @var{r})
+@var{dmat4}:  the matrix to initialize.
+
+@var{r}:  value used to for the rotation, angle in radians.
+
+Loads the matrix with a rotation matrix. By multiplicating by this
+matrix, a rotation is done, over the Y axis.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_rot_z} (lw6mat_dmat4_t * @var{dmat4}, double @var{r})
+@var{dmat4}:  the matrix to initialize.
+
+@var{r}:  value used to for the rotation, angle in radians.
+
+Loads the matrix with a rotation matrix. By multiplicating by this
+matrix, a rotation is done, over the Z axis.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_ortho} (lw6mat_dmat4_t * @var{dmat4}, double @var{left}, double @var{right}, double @var{bottom}, double @var{top}, double @var{nearval}, double @var{farval})
+@var{dmat4}:  the matrix to initialize.
+
+@var{left}:  left plane coordinate
+
+@var{right}:  right plane coordinate
+
+@var{bottom}:  bottom plane coordinate
+
+@var{top}:  top plane coordinate
+
+@var{nearval}:  near plane coordinate
+
+@var{farval}:  far plane coordinate
+
+Loads the matrix with an orthogonal projection matrix.
+Does it the way glOrtho would, see
+https://www.opengl.org/sdk/docs/man2/xhtml/glOrtho.xml
+for details.
+
+@strong{Note:}  use -nearVal and -farVal to initialize.
+It's a little akward, if you expect to pass vectors with positions
+ranging from nearVal to farVal then you need to pass -nearVal and
+-farVal to this function. This is probably due to the fact that
+with a right-handed basis and X,Y set up "as usual", then Z is negative
+when going farther and farther. This tweak allows farVal to yield
++1 and nearVal -1. We keep this function as is here, as this is the
+way OpenGL functions seem to work.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_perspective} (lw6mat_dmat4_t * @var{dmat4}, double @var{fovy}, double @var{aspect}, double @var{znear}, double @var{zfar})
+@var{dmat4}:  the matrix to initialize.
+
+@var{fovy}:  vertical field of view (degrees, not radians)
+
+@var{aspect}:  x/y ratio
+
+@var{znear}:  near plane coordinate (use -znear to initialize)
+
+@var{zfar}:  far plane coordinate (use -zfar to initialize)
+
+Loads the matrix with a projection matrix.
+Does it the way gluPerspective would, see
+https://www.opengl.org/sdk/docs/man2/xhtml/gluPerspective.xml
+for details.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dmat4_is_same} (const lw6mat_dmat4_t * @var{dmat4_a}, const lw6mat_dmat4_t * @var{dmat4_b})
+@var{dmat4_a}:  1st matrix to compare
+
+@var{dmat4_b}:  2nd matrix to compare
+
+Compares two matrix, returns true if they are equal.
+
+@strong{Return value:}  1 if equal, 0 if different.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_transpose} (lw6mat_dmat4_t * @var{dmat4})
+@var{dmat4}:  the matrix to transpose
+
+Transposes the matrix, that is, inverts rows and columns.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {double} {lw6mat_dmat4_det} (const lw6mat_dmat4_t * @var{dmat4})
+@var{dmat4}:  the matrix used to calculate the determinant
+
+Calulates the determinant of the matrix.
+
+@strong{Return value:}  the determinant.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_mul_scale} (lw6mat_dmat4_t * @var{dmat4}, double @var{f})
+@var{dmat4}:  matrix to modify
+
+@var{f}:  scale factor
+
+Scales the matrix by multiplying all its members by a scalar value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dmat4_inv} (lw6sys_context_t * @var{sys_context}, lw6mat_dmat4_t * @var{dmat4_dst}, const lw6mat_dmat4_t * @var{dmat4_src})
+@var{sys_context}:  global system context
+
+@var{dmat4_dst}:  the matrix inverted
+
+@var{dmat4_src}:  the matrix to invert
+
+Inverts a matrix. Probably not the fastest implementation, but
+should work in all cases. Use hardware accelerated API such as
+OpenGL on dedicated hardware if you want power.
+
+@strong{Return value:}  1 if inverted, 0 if error, typically if determinant was 0, matrix
+can not be inverted.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_mul_dmat4} (lw6mat_dmat4_t * @var{dmat4}, const lw6mat_dmat4_t * @var{dmat4_a}, const lw6mat_dmat4_t * @var{dmat4_b})
+@var{dmat4}:  the result matrix
+
+@var{dmat4_a}:  the 1st matrix to multiply, on the left
+
+@var{dmat4_b}:  the 2nd matrix to multiply, on the right
+
+Classic matrix multiplication.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_mul_dvec4} (lw6mat_dvec4_t * @var{dvec4_dst}, const lw6mat_dmat4_t * @var{dmat4}, const lw6mat_dvec4_t * @var{dvec4_src})
+@var{dvec4_dst}:  the result vector
+
+@var{dmat4}:  the matrix to use
+
+@var{dvec4_src}:  the source vector
+
+Multiplication of matrix by vector. The result is a
+vector, the convention used is that of OpenGL, matrix are
+column major and vector are columns, that is, should you
+do it on a paper, vector is placed vertically, on the right of
+matrix. The other multiplication is not implemented, transposing
+the matrix will do it the other way if you wish.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dmat4_mul_dvec3} (lw6mat_dvec3_t * @var{dvec3_dst}, const lw6mat_dmat4_t * @var{dmat4}, const lw6mat_dvec3_t * @var{dvec3_src})
+@var{dvec3_dst}:  the result vector
+
+@var{dmat4}:  the matrix to use
+
+@var{dvec3_src}:  the source vector
+
+Multiplication of matrix by vector. The result is a
+vector, the convention used is that of OpenGL, matrix are
+column major and vector are columns, that is, should you
+do it on a paper, vector is placed vertically, on the right of
+matrix. The other multiplication is not implemented, transposing
+the matrix will do it the other way if you wish.
+The vector, here, is smaller than the matrix, the last element
+is supposed to be 1, this is how one implements translation through
+multiplication.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {char *} {lw6mat_dmat4_repr} (lw6sys_context_t * @var{sys_context}, const lw6mat_dmat4_t * @var{dmat4})
+@var{sys_context}:  global system context
+
+Gives a readable version of the matrix, the representation
+uses newlines, with a different line for each row
+
+@strong{Return value:}  newly allocated string
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec2_zero} (lw6mat_dvec2_t * @var{dvec2})
+@var{dvec2}:  the vector to initialize.
+
+Fills the vector with zeros, regardless of what was there before.
+Internally, does a memset the only advantage is that this function
+should use the right sizeof and therefore avoids typo errors.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dvec2_is_same} (const lw6mat_dvec2_t * @var{dvec2_a}, const lw6mat_dvec2_t * @var{dvec2_b})
+@var{dvec2_a}:  1st vector to compare
+
+@var{dvec2_b}:  2nd vector to compare
+
+Compares two vectors, returns true if they are equal.
+
+@strong{Return value:}  1 if equal, 0 if different.
+@end deftypefun
+
+@deftypefun {double} {lw6mat_dvec2_len_sq} (const lw6mat_dvec2_t * @var{dvec2})
+@var{dvec2}:  the vector to query.
+
+Returns the square of a vector length. To get the real length
+one should then apply a square root but at this stage one has
+at least an idea about vector length, and this information is
+enough to compare them.
+
+@strong{Return value:}  sigma(coord*coord)
+@end deftypefun
+
+@deftypefun {double} {lw6mat_dvec2_len} (const lw6mat_dvec2_t * @var{dvec2})
+@var{dvec2}:  the vector to query.
+
+Returns the size/length of a vector, this is the distance
+of the point from origin, not the number of elements.
+
+@strong{Return value:}  the length of the vector.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dvec2_normalize} (lw6sys_context_t * @var{sys_context}, lw6mat_dvec2_t * @var{dvec2})
+@var{sys_context}:  global system context
+
+@var{dvec2}:  the vector to normalize.
+
+Normalizes a vector, that is, make its length be 1.
+
+@strong{Return value:}  1 if OK, 0 if error, such as trying to normalize vector zero.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dvec2_homogeneous} (lw6sys_context_t * @var{sys_context}, lw6mat_dvec2_t * @var{dvec2})
+@var{sys_context}:  global system context
+
+@var{dvec2}:  the vector to homogeneous.
+
+Transforms a vector into homegeneous coords, that is, scales it so
+that its last member is 1.
+
+@strong{Return value:}  1 if OK, 0 if error, such as trying to operate on vector zero.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec2_neg} (lw6mat_dvec2_t * @var{dvec2})
+@var{dvec2}:  vector to modify
+
+Calcs the opposite vector, by making a negation on all its members
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec2_add} (lw6mat_dvec2_t * @var{dvec2}, const lw6mat_dvec2_t * @var{dvec2_a}, const lw6mat_dvec2_t * @var{dvec2_b})
+@var{dvec2}:  result vector
+
+@var{dvec2_a}:  1st vector to add
+
+@var{dvec2_b}:  2nd vector to add
+
+Adds two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec2_sub} (lw6mat_dvec2_t * @var{dvec2}, const lw6mat_dvec2_t * @var{dvec2_a}, const lw6mat_dvec2_t * @var{dvec2_b})
+@var{dvec2}:  result vector
+
+@var{dvec2_a}:  1st vector
+
+@var{dvec2_b}:  2nd vector, will be substracted to 1st vector
+
+Substracts vector b from vector a.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {double} {lw6mat_dvec2_dot} (const lw6mat_dvec2_t * @var{dvec2_a}, const lw6mat_dvec2_t * @var{dvec2_b})
+@var{dvec2_a}:  1st vector
+
+@var{dvec2_b}:  2nd vector
+
+Calculates the dot AKA scalar product of the two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec2_cross} (lw6mat_dvec3_t * @var{dvec3}, const lw6mat_dvec2_t * @var{dvec2_a}, const lw6mat_dvec2_t * @var{dvec2_b})
+@var{dvec3}:  result vector
+
+@var{dvec2_a}:  1st vector
+
+@var{dvec2_b}:  2nd vector
+
+Calculates the cross AKA vectorial product of the two vectors.
+Since cross product only really makes sense in 3D, this function
+will interpret the 2D vectors as 3D vectors with z set t zero,
+that is, a vector in the xy plane.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec2_mul_scale} (lw6mat_dvec2_t * @var{dvec2}, double @var{f})
+@var{dvec2}:  vector to modify
+
+@var{f}:  scale factor
+
+Scales the vector by multiplying all its members by a scalar value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec2_mul_dvec2} (lw6mat_dmat2_t * @var{dmat2}, const lw6mat_dvec2_t * @var{dvec2_a}, const lw6mat_dvec2_t * @var{dvec2_b})
+@var{dmat2}:  result matrix
+
+@var{dvec2_a}:  1st row vector
+
+@var{dvec2_b}:  2nd column vector
+
+Multiplication of a row vector by a column vector to give a matrix.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {char *} {lw6mat_dvec2_repr} (lw6sys_context_t * @var{sys_context}, const lw6mat_dvec2_t * @var{dvec2})
+@var{sys_context}:  global system context
+
+Gives a readable version of the vector
+
+@strong{Return value:}  newly allocated string
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec3_zero} (lw6mat_dvec3_t * @var{dvec3})
+@var{dvec3}:  the vector to initialize.
+
+Fills the vector with zeros, regardless of what was there before.
+Internally, does a memset the only advantage is that this function
+should use the right sizeof and therefore avoids typo errors.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dvec3_is_same} (const lw6mat_dvec3_t * @var{dvec3_a}, const lw6mat_dvec3_t * @var{dvec3_b})
+@var{dvec3_a}:  1st vector to compare
+
+@var{dvec3_b}:  2nd vector to compare
+
+Compares two vectors, returns true if they are equal.
+
+@strong{Return value:}  1 if equal, 0 if different.
+@end deftypefun
+
+@deftypefun {double} {lw6mat_dvec3_len_sq} (const lw6mat_dvec3_t * @var{dvec3})
+@var{dvec3}:  the vector to query.
+
+Returns the square of a vector length. To get the real length
+one should then apply a square root but at this stage one has
+at least an idea about vector length, and this information is
+enough to compare them.
+
+@strong{Return value:}  sigma(coord*coord)
+@end deftypefun
+
+@deftypefun {double} {lw6mat_dvec3_len} (const lw6mat_dvec3_t * @var{dvec3})
+@var{dvec3}:  the vector to query.
+
+Returns the size/length of a vector, this is the distance
+of the point from origin, not the number of elements.
+
+@strong{Return value:}  the length of the vector.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dvec3_normalize} (lw6sys_context_t * @var{sys_context}, lw6mat_dvec3_t * @var{dvec3})
+@var{sys_context}:  global system context
+
+@var{dvec3}:  the vector to normalize.
+
+Normalizes a vector, that is, make its length be 1.
+
+@strong{Return value:}  1 if OK, 0 if error, such as trying to normalize vector zero.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dvec3_homogeneous} (lw6sys_context_t * @var{sys_context}, lw6mat_dvec3_t * @var{dvec3})
+@var{sys_context}:  global system context
+
+@var{dvec3}:  the vector to homogeneous.
+
+Transforms a vector into homegeneous coords, that is, scales it so
+that its last member is 1.
+
+@strong{Return value:}  1 if OK, 0 if error, such as trying to operate on vector zero.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec3_neg} (lw6mat_dvec3_t * @var{dvec3})
+@var{dvec3}:  vector to modify
+
+Calcs the opposite vector, by making a negation on all its members
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec3_add} (lw6mat_dvec3_t * @var{dvec3}, const lw6mat_dvec3_t * @var{dvec3_a}, const lw6mat_dvec3_t * @var{dvec3_b})
+@var{dvec3}:  result vector
+
+@var{dvec3_a}:  1st vector to add
+
+@var{dvec3_b}:  2nd vector to add
+
+Adds two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec3_sub} (lw6mat_dvec3_t * @var{dvec3}, const lw6mat_dvec3_t * @var{dvec3_a}, const lw6mat_dvec3_t * @var{dvec3_b})
+@var{dvec3}:  result vector
+
+@var{dvec3_a}:  1st vector
+
+@var{dvec3_b}:  2nd vector, will be substracted to 1st vector
+
+Substracts vector b from vector a.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {double} {lw6mat_dvec3_dot} (const lw6mat_dvec3_t * @var{dvec3_a}, const lw6mat_dvec3_t * @var{dvec3_b})
+@var{dvec3_a}:  1st vector
+
+@var{dvec3_b}:  2nd vector
+
+Calculates the dot AKA scalar product of the two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec3_cross} (lw6mat_dvec3_t * @var{dvec3}, const lw6mat_dvec3_t * @var{dvec3_a}, const lw6mat_dvec3_t * @var{dvec3_b})
+@var{dvec3}:  result vector
+
+@var{dvec3_a}:  1st vector
+
+@var{dvec3_b}:  2nd vector
+
+Calculates the cross AKA vectorial product of the two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec3_mul_scale} (lw6mat_dvec3_t * @var{dvec3}, double @var{f})
+@var{dvec3}:  vector to modify
+
+@var{f}:  scale factor
+
+Scales the vector by multiplying all its members by a scalar value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec3_mul_dvec3} (lw6mat_dmat3_t * @var{dmat3}, const lw6mat_dvec3_t * @var{dvec3_a}, const lw6mat_dvec3_t * @var{dvec3_b})
+@var{dmat3}:  result matrix
+
+@var{dvec3_a}:  1st row vector
+
+@var{dvec3_b}:  3nd column vector
+
+Multiplication of a row vector by a column vector to give a matrix.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {char *} {lw6mat_dvec3_repr} (lw6sys_context_t * @var{sys_context}, const lw6mat_dvec3_t * @var{dvec3})
+@var{sys_context}:  global system context
+
+Gives a readable version of the vector
+
+@strong{Return value:}  newly allocated string
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec4_zero} (lw6mat_dvec4_t * @var{dvec4})
+@var{dvec4}:  the vector to initialize.
+
+Fills the vector with zeros, regardless of what was there before.
+Internally, does a memset the only advantage is that this function
+should use the right sizeof and therefore avoids typo errors.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dvec4_is_same} (const lw6mat_dvec4_t * @var{dvec4_a}, const lw6mat_dvec4_t * @var{dvec4_b})
+@var{dvec4_a}:  1st vector to compare
+
+@var{dvec4_b}:  2nd vector to compare
+
+Compares two vectors, returns true if they are equal.
+
+@strong{Return value:}  1 if equal, 0 if different.
+@end deftypefun
+
+@deftypefun {double} {lw6mat_dvec4_len_sq} (const lw6mat_dvec4_t * @var{dvec4})
+@var{dvec4}:  the vector to query.
+
+Returns the square of a vector length. To get the real length
+one should then apply a square root but at this stage one has
+at least an idea about vector length, and this information is
+enough to compare them.
+
+@strong{Return value:}  sigma(coord*coord)
+@end deftypefun
+
+@deftypefun {double} {lw6mat_dvec4_len} (const lw6mat_dvec4_t * @var{dvec4})
+@var{dvec4}:  the vector to query.
+
+Returns the size/length of a vector, this is the distance
+of the point from origin, not the number of elements.
+
+@strong{Return value:}  the length of the vector.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dvec4_normalize} (lw6sys_context_t * @var{sys_context}, lw6mat_dvec4_t * @var{dvec4})
+@var{sys_context}:  global system context
+
+@var{dvec4}:  the vector to normalize.
+
+Normalizes a vector, that is, make its length be 1.
+
+@strong{Return value:}  1 if OK, 0 if error, such as trying to normalize vector zero.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_dvec4_homogeneous} (lw6sys_context_t * @var{sys_context}, lw6mat_dvec4_t * @var{dvec4})
+@var{sys_context}:  global system context
+
+@var{dvec4}:  the vector to homogeneous.
+
+Transforms a vector into homegeneous coords, that is, scales it so
+that its last member is 1.
+
+@strong{Return value:}  1 if OK, 0 if error, such as trying to operate on vector zero.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec4_neg} (lw6mat_dvec4_t * @var{dvec4})
+@var{dvec4}:  vector to modify
+
+Calcs the opposite vector, by making a negation on all its members
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec4_add} (lw6mat_dvec4_t * @var{dvec4}, const lw6mat_dvec4_t * @var{dvec4_a}, const lw6mat_dvec4_t * @var{dvec4_b})
+@var{dvec4}:  result vector
+
+@var{dvec4_a}:  1st vector to add
+
+@var{dvec4_b}:  2nd vector to add
+
+Adds two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec4_sub} (lw6mat_dvec4_t * @var{dvec4}, const lw6mat_dvec4_t * @var{dvec4_a}, const lw6mat_dvec4_t * @var{dvec4_b})
+@var{dvec4}:  result vector
+
+@var{dvec4_a}:  1st vector
+
+@var{dvec4_b}:  2nd vector, will be substracted to 1st vector
+
+Substracts vector b from vector a.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {double} {lw6mat_dvec4_dot} (const lw6mat_dvec4_t * @var{dvec4_a}, const lw6mat_dvec4_t * @var{dvec4_b})
+@var{dvec4_a}:  1st vector
+
+@var{dvec4_b}:  2nd vector
+
+Calculates the dot AKA scalar product of the two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec4_cross} (lw6mat_dvec3_t * @var{dvec3}, const lw6mat_dvec4_t * @var{dvec4_a}, const lw6mat_dvec4_t * @var{dvec4_b})
+@var{dvec3}:  result vector
+
+@var{dvec4_a}:  1st vector
+
+@var{dvec4_b}:  2nd vector
+
+Calculates the cross AKA vectorial product of the two vectors.
+Since cross product only really makes sense in 3D, this function
+will interpret the 4D vectors as 3D vectors only, ignoring
+the last value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec4_mul_scale} (lw6mat_dvec4_t * @var{dvec4}, double @var{f})
+@var{dvec4}:  vector to modify
+
+@var{f}:  scale factor
+
+Scales the vector by multiplying all its members by a scalar value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_dvec4_mul_dvec4} (lw6mat_dmat4_t * @var{dmat4}, const lw6mat_dvec4_t * @var{dvec4_a}, const lw6mat_dvec4_t * @var{dvec4_b})
+@var{dmat4}:  result matrix
+
+@var{dvec4_a}:  1st row vector
+
+@var{dvec4_b}:  4nd column vector
+
+Multiplication of a row vector by a column vector to give a matrix.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {char *} {lw6mat_dvec4_repr} (lw6sys_context_t * @var{sys_context}, const lw6mat_dvec4_t * @var{dvec4})
+@var{sys_context}:  global system context
+
+Gives a readable version of the vector
+
+@strong{Return value:}  newly allocated string
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat2_zero} (lw6mat_fmat2_t * @var{fmat2})
+@var{fmat2}:  the matrix to initialize.
+
+Fills the matrix with zeros, regardless of what was there before.
+Internally, does a memset the only advantage is that this function
+should use the right sizeof and therefore avoids typo errors.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat2_identity} (lw6mat_fmat2_t * @var{fmat2})
+@var{fmat2}:  the matrix to initialize.
+
+Loads the matrix with the identity matrix, that is, zero everywhere
+but one on the main diag.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat2_translation} (lw6mat_fmat2_t * @var{fmat2}, float @var{f})
+@var{fmat2}:  the matrix to initialize.
+
+@var{f}:  value which defines the translation.
+
+Loads the matrix with a translation transformation matrix.
+By multiplicating by this matrix, a translation is done.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat2_scale} (lw6mat_fmat2_t * @var{fmat2}, float @var{f})
+@var{fmat2}:  the matrix to initialize.
+
+@var{f}:  value used to scale matrix.
+
+Loads the matrix with a scale matrix. By multiplicating by this
+matrix, a scaling is done.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fmat2_is_same} (const lw6mat_fmat2_t * @var{fmat2_a}, const lw6mat_fmat2_t * @var{fmat2_b})
+@var{fmat2_a}:  1st matrix to compare
+
+@var{fmat2_b}:  2nd matrix to compare
+
+Compares two matrix, returns true if they are equal.
+
+@strong{Return value:}  1 if equal, 0 if different.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat2_transpose} (lw6mat_fmat2_t * @var{fmat2})
+@var{fmat2}:  the matrix to transpose
+
+Transposes the matrix, that is, inverts rows and columns.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {float} {lw6mat_fmat2_det} (const lw6mat_fmat2_t * @var{fmat2})
+@var{fmat2}:  the matrix used to calculate the determinant
+
+Calulates the determinant of the matrix.
+
+@strong{Return value:}  the determinant.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat2_mul_scale} (lw6mat_fmat2_t * @var{fmat2}, float @var{f})
+@var{fmat2}:  matrix to modify
+
+@var{f}:  scale factor
+
+Scales the matrix by multiplying all its members by a scalar value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fmat2_inv} (lw6sys_context_t * @var{sys_context}, lw6mat_fmat2_t * @var{fmat2_dst}, const lw6mat_fmat2_t * @var{fmat2_src})
+@var{sys_context}:  global system context
+
+@var{fmat2_dst}:  the matrix inverted
+
+@var{fmat2_src}:  the matrix to invert
+
+Inverts a matrix. Probably not the fastest implementation, but
+should work in all cases. Use hardware accelerated API such as
+OpenGL on dedicated hardware if you want power.
+
+@strong{Return value:}  1 if inverted, 0 if error, typically if determinant was 0, matrix
+can not be inverted.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat2_mul_fmat2} (lw6mat_fmat2_t * @var{fmat2}, const lw6mat_fmat2_t * @var{fmat2_a}, const lw6mat_fmat2_t * @var{fmat2_b})
+@var{fmat2}:  the result matrix
+
+@var{fmat2_a}:  the 1st matrix to multiply, on the left
+
+@var{fmat2_b}:  the 2nd matrix to multiply, on the right
+
+Classic matrix multiplication.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat2_mul_fvec2} (lw6mat_fvec2_t * @var{fvec2_dst}, const lw6mat_fmat2_t * @var{fmat2}, const lw6mat_fvec2_t * @var{fvec2_src})
+@var{fvec2_dst}:  the result vector
+
+@var{fvec2_src}:  the source vector
+
+Multiplication of matrix by vector. The result is a
+vector, the convention used is that of OpenGL, matrix are
+column major and vector are columns, that is, should you
+do it on a paper, vector is placed vertically, on the right of
+matrix. The other multiplication is not implemented, transposing
+the matrix will do it the other way if you wish.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {char *} {lw6mat_fmat2_repr} (lw6sys_context_t * @var{sys_context}, const lw6mat_fmat2_t * @var{fmat2})
+@var{sys_context}:  global system context
+
+Gives a readable version of the matrix, the representation
+uses newlines, with a different line for each row
+
+@strong{Return value:}  newly allocated string
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat3_zero} (lw6mat_fmat3_t * @var{fmat3})
+@var{fmat3}:  the matrix to initialize.
+
+Fills the matrix with zeros, regardless of what was there before.
+Internally, does a memset the only advantage is that this function
+should use the right sizeof and therefore avoids typo errors.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat3_identity} (lw6mat_fmat3_t * @var{fmat3})
+@var{fmat3}:  the matrix to initialize.
+
+Loads the matrix with the identity matrix, that is, zero everywhere
+but one on the main diag.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat3_translation} (lw6mat_fmat3_t * @var{fmat3}, const lw6mat_fvec2_t * @var{fvec2})
+@var{fmat3}:  the matrix to initialize.
+
+@var{fvec2}:  vector which defines the translation.
+
+Loads the matrix with a translation transformation matrix.
+By multiplicating by this matrix, a translation is done.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat3_scale} (lw6mat_fmat3_t * @var{fmat3}, const lw6mat_fvec2_t * @var{fvec2})
+@var{fmat3}:  the matrix to initialize.
+
+@var{fvec2}:  value used to scale matrix.
+
+Loads the matrix with a scale matrix. By multiplicating by this
+matrix, a scaling is done.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat3_rot} (lw6mat_fmat3_t * @var{fmat3}, float @var{r})
+@var{fmat3}:  the matrix to initialize.
+
+@var{r}:  value used to for the rotation, angle in radians.
+
+Loads the matrix with a rotation matrix. By multiplicating by this
+matrix, a rotation is done, over a virtual Z axis such as Z is the
+cross product of X and Y.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fmat3_is_same} (const lw6mat_fmat3_t * @var{fmat3_a}, const lw6mat_fmat3_t * @var{fmat3_b})
+@var{fmat3_a}:  1st matrix to compare
+
+@var{fmat3_b}:  2nd matrix to compare
+
+Compares two matrix, returns true if they are equal.
+
+@strong{Return value:}  1 if equal, 0 if different.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat3_transpose} (lw6mat_fmat3_t * @var{fmat3})
+@var{fmat3}:  the matrix to transpose
+
+Transposes the matrix, that is, inverts rows and columns.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {float} {lw6mat_fmat3_det} (const lw6mat_fmat3_t * @var{fmat3})
+@var{fmat3}:  the matrix used to calculate the determinant
+
+Calulates the determinant of the matrix.
+
+@strong{Return value:}  the determinant.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat3_mul_scale} (lw6mat_fmat3_t * @var{fmat3}, float @var{f})
+@var{fmat3}:  matrix to modify
+
+@var{f}:  scale factor
+
+Scales the matrix by multiplying all its members by a scalar value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fmat3_inv} (lw6sys_context_t * @var{sys_context}, lw6mat_fmat3_t * @var{fmat3_dst}, const lw6mat_fmat3_t * @var{fmat3_src})
+@var{sys_context}:  global system context
+
+@var{fmat3_dst}:  the matrix inverted
+
+@var{fmat3_src}:  the matrix to invert
+
+Inverts a matrix. Probably not the fastest implementation, but
+should work in all cases. Use hardware accelerated API such as
+OpenGL on dedicated hardware if you want power.
+
+@strong{Return value:}  1 if inverted, 0 if error, typically if determinant was 0, matrix
+can not be inverted.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat3_mul_fmat3} (lw6mat_fmat3_t * @var{fmat3}, const lw6mat_fmat3_t * @var{fmat3_a}, const lw6mat_fmat3_t * @var{fmat3_b})
+@var{fmat3}:  the result matrix
+
+@var{fmat3_a}:  the 1st matrix to multiply, on the left
+
+@var{fmat3_b}:  the 2nd matrix to multiply, on the right
+
+Classic matrix multiplication.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat3_mul_fvec3} (lw6mat_fvec3_t * @var{fvec3_dst}, const lw6mat_fmat3_t * @var{fmat3}, const lw6mat_fvec3_t * @var{fvec3_src})
+@var{fvec3_dst}:  the result vector
+
+@var{fvec3_src}:  the source vector
+
+Multiplication of matrix by vector. The result is a
+vector, the convention used is that of OpenGL, matrix are
+column major and vector are columns, that is, should you
+do it on a paper, vector is placed vertically, on the right of
+matrix. The other multiplication is not implemented, transposing
+the matrix will do it the other way if you wish.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat3_mul_fvec2} (lw6mat_fvec2_t * @var{fvec2_dst}, const lw6mat_fmat3_t * @var{fmat3}, const lw6mat_fvec2_t * @var{fvec2_src})
+@var{fvec2_dst}:  the result vector
+
+Multiplication of matrix by vector. The result is a
+vector, the convention used is that of OpenGL, matrix are
+column major and vector are columns, that is, should you
+do it on a paper, vector is placed vertically, on the right of
+matrix. The other multiplication is not implemented, transposing
+the matrix will do it the other way if you wish.
+The vector, here, is smaller than the matrix, the last element
+is supposed to be 1, this is how one implements translation through
+multiplication.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {char *} {lw6mat_fmat3_repr} (lw6sys_context_t * @var{sys_context}, const lw6mat_fmat3_t * @var{fmat3})
+@var{sys_context}:  global system context
+
+Gives a readable version of the matrix, the representation
+uses newlines, with a different line for each row
+
+@strong{Return value:}  newly allocated string
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_zero} (lw6mat_fmat4_t * @var{fmat4})
+@var{fmat4}:  the matrix to initialize.
+
+Fills the matrix with zeros, regardless of what was there before.
+Internally, does a memset the only advantage is that this function
+should use the right sizeof and therefore avoids typo errors.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_identity} (lw6mat_fmat4_t * @var{fmat4})
+@var{fmat4}:  the matrix to initialize.
+
+Loads the matrix with the identity matrix, that is, zero everywhere
+but one on the main diag.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_translation} (lw6mat_fmat4_t * @var{fmat4}, const lw6mat_fvec3_t * @var{fvec3})
+@var{fmat4}:  the matrix to initialize.
+
+@var{fvec3}:  vector which defines the translation.
+
+Loads the matrix with a translation transformation matrix.
+By multiplicating by this matrix, a translation is done.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_scale} (lw6mat_fmat4_t * @var{fmat4}, const lw6mat_fvec3_t * @var{fvec3})
+@var{fmat4}:  the matrix to initialize.
+
+@var{fvec3}:  value used to scale matrix.
+
+Loads the matrix with a scale matrix. By multiplicating by this
+matrix, a scaling is done.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_rot_x} (lw6mat_fmat4_t * @var{fmat4}, float @var{r})
+@var{fmat4}:  the matrix to initialize.
+
+@var{r}:  value used to for the rotation, angle in radians.
+
+Loads the matrix with a rotation matrix. By multiplicating by this
+matrix, a rotation is done, over the X axis.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_rot_y} (lw6mat_fmat4_t * @var{fmat4}, float @var{r})
+@var{fmat4}:  the matrix to initialize.
+
+@var{r}:  value used to for the rotation, angle in radians.
+
+Loads the matrix with a rotation matrix. By multiplicating by this
+matrix, a rotation is done, over the Y axis.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_rot_z} (lw6mat_fmat4_t * @var{fmat4}, float @var{r})
+@var{fmat4}:  the matrix to initialize.
+
+@var{r}:  value used to for the rotation, angle in radians.
+
+Loads the matrix with a rotation matrix. By multiplicating by this
+matrix, a rotation is done, over the Z axis.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_ortho} (lw6mat_fmat4_t * @var{fmat4}, float @var{left}, float @var{right}, float @var{bottom}, float @var{top}, float @var{nearval}, float @var{farval})
+@var{fmat4}:  the matrix to initialize.
+
+@var{left}:  left plane coordinate
+
+@var{right}:  right plane coordinate
+
+@var{bottom}:  bottom plane coordinate
+
+@var{top}:  top plane coordinate
+
+@var{nearval}:  near plane coordinate
+
+@var{farval}:  far plane coordinate
+
+Loads the matrix with an orthogonal projection matrix.
+Does it the way glOrtho would, see
+https://www.opengl.org/sdk/docs/man2/xhtml/glOrtho.xml
+for details.
+
+@strong{Note:}  use -nearVal and -farVal to initialize.
+It's a little akward, if you expect to pass vectors with positions
+ranging from nearVal to farVal then you need to pass -nearVal and
+-farVal to this function. This is probably due to the fact that
+with a right-handed basis and X,Y set up "as usual", then Z is negative
+when going farther and farther. This tweak allows farVal to yield
++1 and nearVal -1. We keep this function as is here, as this is the
+way OpenGL functions seem to work.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_perspective} (lw6mat_fmat4_t * @var{fmat4}, float @var{fovy}, float @var{aspect}, float @var{znear}, float @var{zfar})
+@var{fmat4}:  the matrix to initialize.
+
+@var{fovy}:  vertical field of view (degrees, not radians)
+
+@var{aspect}:  x/y ratio
+
+@var{znear}:  near plane coordinate (use -znear to initialize)
+
+@var{zfar}:  far plane coordinate (use -zfar to initialize)
+
+Loads the matrix with a projection matrix.
+Does it the way gluPerspective would, see
+https://www.opengl.org/sdk/docs/man2/xhtml/gluPerspective.xml
+for details.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fmat4_is_same} (const lw6mat_fmat4_t * @var{fmat4_a}, const lw6mat_fmat4_t * @var{fmat4_b})
+@var{fmat4_a}:  1st matrix to compare
+
+@var{fmat4_b}:  2nd matrix to compare
+
+Compares two matrix, returns true if they are equal.
+
+@strong{Return value:}  1 if equal, 0 if different.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_transpose} (lw6mat_fmat4_t * @var{fmat4})
+@var{fmat4}:  the matrix to transpose
+
+Transposes the matrix, that is, inverts rows and columns.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {float} {lw6mat_fmat4_det} (const lw6mat_fmat4_t * @var{fmat4})
+@var{fmat4}:  the matrix used to calculate the determinant
+
+Calulates the determinant of the matrix.
+
+@strong{Return value:}  the determinant.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_mul_scale} (lw6mat_fmat4_t * @var{fmat4}, float @var{f})
+@var{fmat4}:  matrix to modify
+
+@var{f}:  scale factor
+
+Scales the matrix by multiplying all its members by a scalar value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fmat4_inv} (lw6sys_context_t * @var{sys_context}, lw6mat_fmat4_t * @var{fmat4_dst}, const lw6mat_fmat4_t * @var{fmat4_src})
+@var{sys_context}:  global system context
+
+@var{fmat4_dst}:  the matrix inverted
+
+@var{fmat4_src}:  the matrix to invert
+
+Inverts a matrix. Probably not the fastest implementation, but
+should work in all cases. Use hardware accelerated API such as
+OpenGL on dedicated hardware if you want power.
+
+@strong{Return value:}  1 if inverted, 0 if error, typically if determinant was 0, matrix
+can not be inverted.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_mul_fmat4} (lw6mat_fmat4_t * @var{fmat4}, const lw6mat_fmat4_t * @var{fmat4_a}, const lw6mat_fmat4_t * @var{fmat4_b})
+@var{fmat4}:  the result matrix
+
+@var{fmat4_a}:  the 1st matrix to multiply, on the left
+
+@var{fmat4_b}:  the 2nd matrix to multiply, on the right
+
+Classic matrix multiplication.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_mul_fvec4} (lw6mat_fvec4_t * @var{fvec4_dst}, const lw6mat_fmat4_t * @var{fmat4}, const lw6mat_fvec4_t * @var{fvec4_src})
+@var{fvec4_dst}:  the result vector
+
+@var{fmat4}:  the matrix to use
+
+@var{fvec4_src}:  the source vector
+
+Multiplication of matrix by vector. The result is a
+vector, the convention used is that of OpenGL, matrix are
+column major and vector are columns, that is, should you
+do it on a paper, vector is placed vertically, on the right of
+matrix. The other multiplication is not implemented, transposing
+the matrix will do it the other way if you wish.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fmat4_mul_fvec3} (lw6mat_fvec3_t * @var{fvec3_dst}, const lw6mat_fmat4_t * @var{fmat4}, const lw6mat_fvec3_t * @var{fvec3_src})
+@var{fvec3_dst}:  the result vector
+
+@var{fmat4}:  the matrix to use
+
+@var{fvec3_src}:  the source vector
+
+Multiplication of matrix by vector. The result is a
+vector, the convention used is that of OpenGL, matrix are
+column major and vector are columns, that is, should you
+do it on a paper, vector is placed vertically, on the right of
+matrix. The other multiplication is not implemented, transposing
+the matrix will do it the other way if you wish.
+The vector, here, is smaller than the matrix, the last element
+is supposed to be 1, this is how one implements translation through
+multiplication.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {char *} {lw6mat_fmat4_repr} (lw6sys_context_t * @var{sys_context}, const lw6mat_fmat4_t * @var{fmat4})
+@var{sys_context}:  global system context
+
+Gives a readable version of the matrix, the representation
+uses newlines, with a different line for each row
+
+@strong{Return value:}  newly allocated string
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec2_zero} (lw6mat_fvec2_t * @var{fvec2})
+@var{fvec2}:  the vector to initialize.
+
+Fills the vector with zeros, regardless of what was there before.
+Internally, does a memset the only advantage is that this function
+should use the right sizeof and therefore avoids typo errors.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fvec2_is_same} (const lw6mat_fvec2_t * @var{fvec2_a}, const lw6mat_fvec2_t * @var{fvec2_b})
+@var{fvec2_a}:  1st vector to compare
+
+@var{fvec2_b}:  2nd vector to compare
+
+Compares two vectors, returns true if they are equal.
+
+@strong{Return value:}  1 if equal, 0 if different.
+@end deftypefun
+
+@deftypefun {float} {lw6mat_fvec2_len_sq} (const lw6mat_fvec2_t * @var{fvec2})
+@var{fvec2}:  the vector to query.
+
+Returns the square of a vector length. To get the real length
+one should then apply a square root but at this stage one has
+at least an idea about vector length, and this information is
+enough to compare them.
+
+@strong{Return value:}  sigma(coord*coord)
+@end deftypefun
+
+@deftypefun {float} {lw6mat_fvec2_len} (const lw6mat_fvec2_t * @var{fvec2})
+@var{fvec2}:  the vector to query.
+
+Returns the size/length of a vector, this is the distance
+of the point from origin, not the number of elements.
+
+@strong{Return value:}  the length of the vector.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fvec2_normalize} (lw6sys_context_t * @var{sys_context}, lw6mat_fvec2_t * @var{fvec2})
+@var{sys_context}:  global system context
+
+@var{fvec2}:  the vector to normalize.
+
+Normalizes a vector, that is, make its length be 1.
+
+@strong{Return value:}  1 if OK, 0 if error, such as trying to normalize vector zero.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fvec2_homogeneous} (lw6sys_context_t * @var{sys_context}, lw6mat_fvec2_t * @var{fvec2})
+@var{sys_context}:  global system context
+
+@var{fvec2}:  the vector to homogeneous.
+
+Transforms a vector into homegeneous coords, that is, scales it so
+that its last member is 1.
+
+@strong{Return value:}  1 if OK, 0 if error, such as trying to operate on vector zero.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec2_neg} (lw6mat_fvec2_t * @var{fvec2})
+@var{fvec2}:  vector to modify
+
+Calcs the opposite vector, by making a negation on all its members
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec2_add} (lw6mat_fvec2_t * @var{fvec2}, const lw6mat_fvec2_t * @var{fvec2_a}, const lw6mat_fvec2_t * @var{fvec2_b})
+@var{fvec2}:  result vector
+
+@var{fvec2_a}:  1st vector to add
+
+@var{fvec2_b}:  2nd vector to add
+
+Adds two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec2_sub} (lw6mat_fvec2_t * @var{fvec2}, const lw6mat_fvec2_t * @var{fvec2_a}, const lw6mat_fvec2_t * @var{fvec2_b})
+@var{fvec2}:  result vector
+
+@var{fvec2_a}:  1st vector
+
+@var{fvec2_b}:  2nd vector, will be substracted to 1st vector
+
+Substracts vector b from vector a.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {float} {lw6mat_fvec2_dot} (const lw6mat_fvec2_t * @var{fvec2_a}, const lw6mat_fvec2_t * @var{fvec2_b})
+@var{fvec2_a}:  1st vector
+
+@var{fvec2_b}:  2nd vector
+
+Calculates the dot AKA scalar product of the two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec2_cross} (lw6mat_fvec3_t * @var{fvec3}, const lw6mat_fvec2_t * @var{fvec2_a}, const lw6mat_fvec2_t * @var{fvec2_b})
+@var{fvec3}:  result vector
+
+@var{fvec2_a}:  1st vector
+
+@var{fvec2_b}:  2nd vector
+
+Calculates the cross AKA vectorial product of the two vectors.
+Since cross product only really makes sense in 3D, this function
+will interpret the 2D vectors as 3D vectors with z set t zero,
+that is, a vector in the xy plane.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec2_mul_scale} (lw6mat_fvec2_t * @var{fvec2}, float @var{f})
+@var{fvec2}:  vector to modify
+
+@var{f}:  scale factor
+
+Scales the vector by multiplying all its members by a scalar value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec2_mul_fvec2} (lw6mat_fmat2_t * @var{fmat2}, const lw6mat_fvec2_t * @var{fvec2_a}, const lw6mat_fvec2_t * @var{fvec2_b})
+@var{fmat2}:  result matrix
+
+@var{fvec2_a}:  1st row vector
+
+@var{fvec2_b}:  2nd column vector
+
+Multiplication of a row vector by a column vector to give a matrix.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {char *} {lw6mat_fvec2_repr} (lw6sys_context_t * @var{sys_context}, const lw6mat_fvec2_t * @var{fvec2})
+@var{sys_context}:  global system context
+
+Gives a readable version of the vector
+
+@strong{Return value:}  newly allocated string
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec3_zero} (lw6mat_fvec3_t * @var{fvec3})
+@var{fvec3}:  the vector to initialize.
+
+Fills the vector with zeros, regardless of what was there before.
+Internally, does a memset the only advantage is that this function
+should use the right sizeof and therefore avoids typo errors.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fvec3_is_same} (const lw6mat_fvec3_t * @var{fvec3_a}, const lw6mat_fvec3_t * @var{fvec3_b})
+@var{fvec3_a}:  1st vector to compare
+
+@var{fvec3_b}:  2nd vector to compare
+
+Compares two vectors, returns true if they are equal.
+
+@strong{Return value:}  1 if equal, 0 if different.
+@end deftypefun
+
+@deftypefun {float} {lw6mat_fvec3_len_sq} (const lw6mat_fvec3_t * @var{fvec3})
+@var{fvec3}:  the vector to query.
+
+Returns the square of a vector length. To get the real length
+one should then apply a square root but at this stage one has
+at least an idea about vector length, and this information is
+enough to compare them.
+
+@strong{Return value:}  sigma(coord*coord)
+@end deftypefun
+
+@deftypefun {float} {lw6mat_fvec3_len} (const lw6mat_fvec3_t * @var{fvec3})
+@var{fvec3}:  the vector to query.
+
+Returns the size/length of a vector, this is the distance
+of the point from origin, not the number of elements.
+
+@strong{Return value:}  the length of the vector.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fvec3_normalize} (lw6sys_context_t * @var{sys_context}, lw6mat_fvec3_t * @var{fvec3})
+@var{sys_context}:  global system context
+
+@var{fvec3}:  the vector to normalize.
+
+Normalizes a vector, that is, make its length be 1.
+
+@strong{Return value:}  1 if OK, 0 if error, such as trying to normalize vector zero.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fvec3_homogeneous} (lw6sys_context_t * @var{sys_context}, lw6mat_fvec3_t * @var{fvec3})
+@var{sys_context}:  global system context
+
+@var{fvec3}:  the vector to homogeneous.
+
+Transforms a vector into homegeneous coords, that is, scales it so
+that its last member is 1.
+
+@strong{Return value:}  1 if OK, 0 if error, such as trying to operate on vector zero.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec3_neg} (lw6mat_fvec3_t * @var{fvec3})
+@var{fvec3}:  vector to modify
+
+Calcs the opposite vector, by making a negation on all its members
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec3_add} (lw6mat_fvec3_t * @var{fvec3}, const lw6mat_fvec3_t * @var{fvec3_a}, const lw6mat_fvec3_t * @var{fvec3_b})
+@var{fvec3}:  result vector
+
+@var{fvec3_a}:  1st vector to add
+
+@var{fvec3_b}:  2nd vector to add
+
+Adds two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec3_sub} (lw6mat_fvec3_t * @var{fvec3}, const lw6mat_fvec3_t * @var{fvec3_a}, const lw6mat_fvec3_t * @var{fvec3_b})
+@var{fvec3}:  result vector
+
+@var{fvec3_a}:  1st vector
+
+@var{fvec3_b}:  2nd vector, will be substracted to 1st vector
+
+Substracts vector b from vector a.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {float} {lw6mat_fvec3_dot} (const lw6mat_fvec3_t * @var{fvec3_a}, const lw6mat_fvec3_t * @var{fvec3_b})
+@var{fvec3_a}:  1st vector
+
+@var{fvec3_b}:  2nd vector
+
+Calculates the dot AKA scalar product of the two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec3_cross} (lw6mat_fvec3_t * @var{fvec3}, const lw6mat_fvec3_t * @var{fvec3_a}, const lw6mat_fvec3_t * @var{fvec3_b})
+@var{fvec3}:  result vector
+
+@var{fvec3_a}:  1st vector
+
+@var{fvec3_b}:  2nd vector
+
+Calculates the cross AKA vectorial product of the two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec3_mul_scale} (lw6mat_fvec3_t * @var{fvec3}, float @var{f})
+@var{fvec3}:  vector to modify
+
+@var{f}:  scale factor
+
+Scales the vector by multiplying all its members by a scalar value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec3_mul_fvec3} (lw6mat_fmat3_t * @var{fmat3}, const lw6mat_fvec3_t * @var{fvec3_a}, const lw6mat_fvec3_t * @var{fvec3_b})
+@var{fmat3}:  result matrix
+
+@var{fvec3_a}:  1st row vector
+
+@var{fvec3_b}:  3nd column vector
+
+Multiplication of a row vector by a column vector to give a matrix.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {char *} {lw6mat_fvec3_repr} (lw6sys_context_t * @var{sys_context}, const lw6mat_fvec3_t * @var{fvec3})
+@var{sys_context}:  global system context
+
+Gives a readable version of the vector
+
+@strong{Return value:}  newly allocated string
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec4_zero} (lw6mat_fvec4_t * @var{fvec4})
+@var{fvec4}:  the vector to initialize.
+
+Fills the vector with zeros, regardless of what was there before.
+Internally, does a memset the only advantage is that this function
+should use the right sizeof and therefore avoids typo errors.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fvec4_is_same} (const lw6mat_fvec4_t * @var{fvec4_a}, const lw6mat_fvec4_t * @var{fvec4_b})
+@var{fvec4_a}:  1st vector to compare
+
+@var{fvec4_b}:  2nd vector to compare
+
+Compares two vectors, returns true if they are equal.
+
+@strong{Return value:}  1 if equal, 0 if different.
+@end deftypefun
+
+@deftypefun {float} {lw6mat_fvec4_len_sq} (const lw6mat_fvec4_t * @var{fvec4})
+@var{fvec4}:  the vector to query.
+
+Returns the square of a vector length. To get the real length
+one should then apply a square root but at this stage one has
+at least an idea about vector length, and this information is
+enough to compare them.
+
+@strong{Return value:}  sigma(coord*coord)
+@end deftypefun
+
+@deftypefun {float} {lw6mat_fvec4_len} (const lw6mat_fvec4_t * @var{fvec4})
+@var{fvec4}:  the vector to query.
+
+Returns the size/length of a vector, this is the distance
+of the point from origin, not the number of elements.
+
+@strong{Return value:}  the length of the vector.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fvec4_normalize} (lw6sys_context_t * @var{sys_context}, lw6mat_fvec4_t * @var{fvec4})
+@var{sys_context}:  global system context
+
+@var{fvec4}:  the vector to normalize.
+
+Normalizes a vector, that is, make its length be 1.
+
+@strong{Return value:}  1 if OK, 0 if error, such as trying to normalize vector zero.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_fvec4_homogeneous} (lw6sys_context_t * @var{sys_context}, lw6mat_fvec4_t * @var{fvec4})
+@var{sys_context}:  global system context
+
+@var{fvec4}:  the vector to homogeneous.
+
+Transforms a vector into homegeneous coords, that is, scales it so
+that its last member is 1.
+
+@strong{Return value:}  1 if OK, 0 if error, such as trying to operate on vector zero.
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec4_neg} (lw6mat_fvec4_t * @var{fvec4})
+@var{fvec4}:  vector to modify
+
+Calcs the opposite vector, by making a negation on all its members
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec4_add} (lw6mat_fvec4_t * @var{fvec4}, const lw6mat_fvec4_t * @var{fvec4_a}, const lw6mat_fvec4_t * @var{fvec4_b})
+@var{fvec4}:  result vector
+
+@var{fvec4_a}:  1st vector to add
+
+@var{fvec4_b}:  2nd vector to add
+
+Adds two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec4_sub} (lw6mat_fvec4_t * @var{fvec4}, const lw6mat_fvec4_t * @var{fvec4_a}, const lw6mat_fvec4_t * @var{fvec4_b})
+@var{fvec4}:  result vector
+
+@var{fvec4_a}:  1st vector
+
+@var{fvec4_b}:  2nd vector, will be substracted to 1st vector
+
+Substracts vector b from vector a.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {float} {lw6mat_fvec4_dot} (const lw6mat_fvec4_t * @var{fvec4_a}, const lw6mat_fvec4_t * @var{fvec4_b})
+@var{fvec4_a}:  1st vector
+
+@var{fvec4_b}:  2nd vector
+
+Calculates the dot AKA scalar product of the two vectors.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec4_cross} (lw6mat_fvec3_t * @var{fvec3}, const lw6mat_fvec4_t * @var{fvec4_a}, const lw6mat_fvec4_t * @var{fvec4_b})
+@var{fvec3}:  result vector
+
+@var{fvec4_a}:  1st vector
+
+@var{fvec4_b}:  2nd vector
+
+Calculates the cross AKA vectorial product of the two vectors.
+Since cross product only really makes sense in 3D, this function
+will interpret the 4D vectors as 3D vectors only, ignoring
+the last value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec4_mul_scale} (lw6mat_fvec4_t * @var{fvec4}, float @var{f})
+@var{fvec4}:  vector to modify
+
+@var{f}:  scale factor
+
+Scales the vector by multiplying all its members by a scalar value.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6mat_fvec4_mul_fvec4} (lw6mat_fmat4_t * @var{fmat4}, const lw6mat_fvec4_t * @var{fvec4_a}, const lw6mat_fvec4_t * @var{fvec4_b})
+@var{fmat4}:  result matrix
+
+@var{fvec4_a}:  1st row vector
+
+@var{fvec4_b}:  4nd column vector
+
+Multiplication of a row vector by a column vector to give a matrix.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {char *} {lw6mat_fvec4_repr} (lw6sys_context_t * @var{sys_context}, const lw6mat_fvec4_t * @var{fvec4})
+@var{sys_context}:  global system context
+
+Gives a readable version of the vector
+
+@strong{Return value:}  newly allocated string
+@end deftypefun
+
+@deftypefun {int} {lw6mat_is_similar_f} (float @var{f_a}, float @var{f_b})
+@var{f_a}:  1st value to compare
+
+@var{f_b}:  2nd value to compare
+
+Compares two value, and returns true if they look the same.
+This similarity is based on a percentage of difference for
+big enough values, and for very small values, they are just
+considered equal whatever happens. This is far from perfect
+but the purpose is usually just to track blunders in matrix
+code.
+
+@strong{Return value:}  1 if similar, 0 if not.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_is_similar_i} (int32_t @var{i_a}, int32_t @var{i_b})
+@var{i_a}:  1st value to compare
+
+@var{i_b}:  2nd value to compare
+
+Compares two value, and returns true if they look the same.
+This similarity is based on a percentage of difference for
+big enough values, and for very small values, they are just
+considered equal whatever happens. This is far from perfect
+but the purpose is usually just to track blunders in matrix
+code.
+
+@strong{Return value:}  1 if similar, 0 if not.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_is_similar_d} (double @var{d_a}, double @var{d_b})
+@var{d_a}:  1st value to compare
+
+@var{d_b}:  2nd value to compare
+
+Compares two value, and returns true if they look the same.
+This similarity is based on a percentage of difference for
+big enough values, and for very small values, they are just
+considered equal whatever happens. This is far from perfect
+but the purpose is usually just to track blunders in matrix
+code.
+
+@strong{Return value:}  1 if similar, 0 if not.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_is_similar_x} (int32_t @var{x_a}, int32_t @var{x_b})
+@var{x_a}:  1st value to compare
+
+@var{x_b}:  2nd value to compare
+
+Compares two value, and returns true if they look the same.
+This similarity is based on a percentage of difference for
+big enough values, and for very small values, they are just
+considered equal whatever happens. This is far from perfect
+but the purpose is usually just to track blunders in matrix
+code.
+
+@strong{Return value:}  1 if similar, 0 if not.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_test_register} (lw6sys_context_t * @var{sys_context}, int @var{mode})
+@var{sys_context}:  global system context
+
+@var{mode}:  test mode (bitmask)
+
+Registers all tests for the libmat module.
+
+@strong{Return value:}  1 if test is successfull, 0 on error.
+@end deftypefun
+
+@deftypefun {int} {lw6mat_test_run} (lw6sys_context_t * @var{sys_context}, int @var{mode})
+@var{sys_context}:  global system context
+
+@var{mode}:  test mode (bitmask)
+
+Runs the @code{mat} module test suite, testing most (if not all...)
+functions.
+
+@strong{Return value:}  1 if test is successfull, 0 on error.
+@end deftypefun
+

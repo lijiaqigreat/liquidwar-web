@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<liquidwar6>
+  <float key="persp-fovy" value="45.0" />
+  <float key="persp-znear" value="0.1" />
+  <float key="persp-zfar" value="1000.0" />
+  <int key="menu-font-size" value="32" />
+  <int key="hud-font-size" value="16" />
+  <int key="cursor-font-size" value="24" />
+  <int key="system-font-size" value="12" />
+  <int key="system-font-dw" value="2" />
+  <int key="system-font-dh" value="1" />
+  <float key="system-font-hcoef" value="0.666" />
+  <float key="gradient-opacity" value="0.75" />
+  <float key="zones-opacity" value="0.50" />
+  <float key="mainlight-r" value="1.0" />
+  <float key="mainlight-g" value="1.0" />
+  <float key="mainlight-b" value="1.0" />
+  <float key="mainlight-a" value="1.0" />
+  <float key="mainlight-x" value="-0.5" />
+  <float key="mainlight-y" value="0.25" />
+  <float key="mainlight-z" value="0.5" />
+  <int key="smoother-gl1obal-zoom-duration" value="200" />
+  <int key="smoother-center-duration" value="500" />
+  <int key="smoother-drawable-duration" value="1000" />
+</liquidwar6>

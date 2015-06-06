@@ -1,0 +1,824 @@
+@deftypefun {void} {lw6_resize_callback} (lw6sys_context_t * @var{sys_context}, lw6gui_video_mode_t * @var{video_mode})
+@var{sys_context}:  global system context
+
+@var{video_mode}:  the new video mode
+
+This callback is here because gfx needs to update the config
+when the screen is resized. But... we did not want to make
+gfx depend on cfg "directly". It's cleaner to pass parameters
+with Scheme, in the long run, it should make things easier.
+So this callback is the solution. Another side effect is that
+this way there's a tangible obvious trace of this updating
+of config status by the gfx module. Seeing it sticking out
+like a thumb isn't a bad thing.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6_release} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Functions which will call @code{quit}, @code{free}, @code{destroy} on whatever
+smob object that has threads and/or requires hardware ressources.
+This is to be called before the Guile interpreter ends. This is because
+when it garbage collects objects at the end of the program, it has
+no idea of what order to use when freeing objects. So if an object
+which uses another one in a thread is freed after the other is freed,
+you get a (rather unexplainabled if not warned) segfault.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6_exit} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Sends a quit message and displays a newline.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {void} {lw6_set_ret} (lw6sys_context_t * @var{sys_context}, int @var{ret})
+@var{sys_context}:  global system context
+
+@var{ret}:  return value to set, 1 for success, 0 for failure
+
+Sets the ret value for the script.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {int} {lw6_get_ret} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Get the ret value for the script.
+
+@strong{Return value:}  1 if success, 0 if not.
+@end deftypefun
+
+@deftypefun {int} {lw6_fix_env} (lw6sys_context_t * @var{sys_context}, int @var{argc}, const char * [] @var{argv})
+@var{sys_context}:  global system context
+
+@var{argc}:  number of args as passed to main
+
+@var{argv}:  array of strings as passed to main
+
+Fixes environment variables (path related) so that
+program can find its requirements. This must be
+called early in the program flow (else other calls
+might fail).
+
+@strong{Return value:}  1 if success, 0 if failure
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_bot} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the bot module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register all the functions, make them callable from Guile.
+This is a very simple yet long and very usefull function,
+without it Guile has no knowledge of what LW6 is.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {extern void} {lw6_cns_handler} (lw6sys_context_t * @var{sys_context}, char * @var{c_line})
+@var{sys_context}:  global system context
+
+@var{c_line}:  the line typed by the user
+
+This function will be called every time a message
+is typed on the console. It runs the given line in
+the current Guile environment.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_cfg} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the cfg module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_cli} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the cli module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_cns} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the cns module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_dsp} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the dsp module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_gen} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the gen module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_gfx} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the gfx module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_gui} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the gui module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_hlp} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the hlp module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_img} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the img module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_ker} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the ker module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_ldr} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the ldr module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_map} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the map module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_net} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the net module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_p2p} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the p2p module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_pil} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the pil module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_snd} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the snd module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_srv} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the srv module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_sys} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the sys module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_register_funcs_tsk} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register the functions of the tsk module, make them callable from Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_init_global} (lw6sys_context_t * @var{sys_context}, int @var{argc}, const char * [] @var{argv})
+@var{sys_context}:  global system context
+
+@var{argc}:  number of args as passed to main
+
+@var{argv}:  array of strings as passed to main
+
+Initializes global values to their defaults.
+
+@strong{Return value:}  1 on success, 0 if failed
+@end deftypefun
+
+@deftypefun {void} {lw6_quit_global} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Frees global values. Will also garbage collect objects
+in case Guile failed to do it perfectly (or we failed to
+tell Guile how to do it). Important note: this function
+can only be called once in a program, usually at the end.
+If called twice, and typically, if *any* Guile code is run
+after it, the risk is that Guile code does not find objects
+that it should, or said differently, Guile might try to
+manipulate stuff that has been deleted without its being
+warned about it. In practice, libGC way of doing thing is
+usually a good thing, since it will from time to time
+keep objects in memory that shouldn't, so there's no point
+in changing that, but as we are pedantic in LW6 about the
+fact that everything at program exit must be perfectly
+freed, the problem arises. So well, only call this once
+at the end, else problem will show up, the usual form
+is a segfault on the delete callback, as when Guile finally
+runs its GC, the object does not exist any more.
+
+@strong{Return value:}  none.
+@end deftypefun
+
+@deftypefun {int} {lw6_main} (lw6sys_context_t * @var{sys_context}, int @var{argc}, const char * [] @var{argv})
+@var{sys_context}:  global system context
+
+@var{argc}:  the argc parameter of the @code{main} function, that is, the number
+of command-line args.
+
+@var{argv}:  the argv parameter of the @code{main} function, that is, an array
+containing pointers on command-line args.
+
+This function is directly called by @code{main}. This means by linking
+against libliquidwar6 and calling it, you would have a program
+that is almost exactly the "official" upstream liquidwar6 binary,
+except you can tweak it and have all the power to call whatever
+other functions you like, embed it. In short, everything the binary
+does, you can do it in your own binarn, by linking against the
+library and calling this function.
+
+@strong{Return value:}  1 if success, zero if failure. Note that this
+is the "standard" C / liquidwar6 way to proceed, but your @code{main}
+function should return 0 if success, else an error code. Typical
+use is "return !lw6_main(argc, argv);".
+@end deftypefun
+
+@deftypefun {int} {lw6_process_non_run_options} (lw6sys_context_t * @var{sys_context}, int @var{argc}, const char * [] @var{argv}, int * @var{run_game})
+@var{sys_context}:  global system context
+
+@var{argc}:  the number of command-line args, as passed to main
+
+@var{argv}:  an array of strings containing command-line args, as passed to main
+
+@var{run_game}:  a pointer to a boolean which will contain true (1) if the
+game must be launched, or false (0) if the option is such that game
+must be skipped. Example: --copyright, --help, ...
+
+
+Interprets command line arguments, and if some need to be processed,
+typically those args that are used to display stuff on the console,
+then perform the corresponding actions.
+
+@strong{Return value:}  non-zero if success, 0 if error. The error can be, for
+instance, the test suite returning "no, tests were not OK".
+@end deftypefun
+
+@deftypefun {SCM} {lw6_make_scm_dsp} (lw6sys_context_t * @var{sys_context}, lw6dsp_backend_t * @var{c_dsp})
+@var{sys_context}:  global system context
+
+@var{c_dsp}:  the display object
+
+Creates an SCM 'dsp' object from C data.
+
+@strong{Return value:}  the SCM object
+@end deftypefun
+
+@deftypefun {lw6dsp_backend_t *} {lw6_scm_to_dsp} (lw6sys_context_t * @var{sys_context}, SCM @var{dsp})
+@var{sys_context}:  global system context
+
+@var{dsp}:  the dsp to convert (SCM object)
+
+Gets the internal C pointer corresponding to the
+scheme 'dsp' object.
+
+@strong{Return value:}  a pointer, *not* a copy, must not be freed
+@end deftypefun
+
+@deftypefun {void} {lw6_free_dsp_smob} (lw6sys_context_t * @var{sys_context}, lw6_dsp_smob_t * @var{dsp_smob})
+@var{sys_context}:  global system context
+
+@var{dsp_smob}:  the smob to free
+
+Frees a dsp smob, we need a special function to do
+that as structures like assoc hold pointers to these
+objects and therefore need a proper callback when being
+destroyed.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {SCM} {lw6_make_scm_snd} (lw6sys_context_t * @var{sys_context}, lw6snd_backend_t * @var{c_snd})
+@var{sys_context}:  global system context
+
+@var{c_snd}:  the sound object
+
+Creates an SCM 'snd' object from C data.
+
+@strong{Return value:}  the SCM object
+@end deftypefun
+
+@deftypefun {lw6snd_backend_t *} {lw6_scm_to_snd} (lw6sys_context_t * @var{sys_context}, SCM @var{snd})
+@var{sys_context}:  global system context
+
+@var{snd}:  the snd to convert (SCM object)
+
+Gets the internal C pointer corresponding to the
+scheme 'snd' object.
+
+@strong{Return value:}  a pointer, *not* a copy, must not be freed
+@end deftypefun
+
+@deftypefun {void} {lw6_free_snd_smob} (lw6sys_context_t * @var{sys_context}, lw6_snd_smob_t * @var{snd_smob})
+@var{sys_context}:  global system context
+
+@var{snd_smob}:  the smob to free
+
+Frees a snd smob, we need a special function to do
+that as structures like assoc hold pointers to these
+objects and therefore need a proper callback when being
+destroyed.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {SCM} {lw6_make_scm_map} (lw6sys_context_t * @var{sys_context}, lw6map_level_t * @var{c_map})
+@var{sys_context}:  global system context
+
+@var{c_map}:  the map object
+
+Creates an SCM 'map' object from C data.
+
+@strong{Return value:}  the SCM object
+@end deftypefun
+
+@deftypefun {lw6map_level_t *} {lw6_scm_to_map} (lw6sys_context_t * @var{sys_context}, SCM @var{map})
+@var{sys_context}:  global system context
+
+@var{map}:  the map to convert (SCM object)
+
+Gets the internal C pointer corresponding to the
+scheme 'map' object.
+
+@strong{Return value:}  a pointer, *not* a copy, must not be freed
+@end deftypefun
+
+@deftypefun {void} {lw6_free_map_smob} (lw6sys_context_t * @var{sys_context}, lw6_map_smob_t * @var{map_smob})
+@var{sys_context}:  global system context
+
+@var{map_smob}:  the smob to free
+
+Frees a map smob, we need a special function to do
+that as structures like assoc hold pointers to these
+objects and therefore need a proper callback when being
+destroyed.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {SCM} {lw6_make_scm_menu} (lw6sys_context_t * @var{sys_context}, lw6gui_menu_t * @var{c_menu})
+@var{sys_context}:  global system context
+
+@var{c_menu}:  the menu object
+
+Creates an SCM 'menu' object from C data.
+
+@strong{Return value:}  the SCM object
+@end deftypefun
+
+@deftypefun {lw6gui_menu_t *} {lw6_scm_to_menu} (lw6sys_context_t * @var{sys_context}, SCM @var{menu})
+@var{sys_context}:  global system context
+
+@var{menu}:  the menu to convert (SCM object)
+
+Gets the internal C pointer corresponding to the
+scheme 'menu' object.
+
+@strong{Return value:}  a pointer, *not* a copy, must not be freed
+@end deftypefun
+
+@deftypefun {void} {lw6_free_menu_smob} (lw6sys_context_t * @var{sys_context}, lw6_menu_smob_t * @var{menu_smob})
+@var{sys_context}:  global system context
+
+@var{menu_smob}:  the smob to free
+
+Frees a menu smob, we need a special function to do
+that as structures like assoc hold pointers to these
+objects and therefore need a proper callback when being
+destroyed.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {SCM} {lw6_make_scm_game_struct} (lw6sys_context_t * @var{sys_context}, lw6ker_game_struct_t * @var{c_game_struct}, SCM @var{map})
+@var{sys_context}:  global system context
+
+@var{c_game_struct}:  the game struct object
+
+@var{map}:  the map (SCM object) referenced
+
+Creates an SCM 'game-struct' object from C data.
+Passing the map object enables the garbage collector
+not to free the map until the game struct is freed.
+
+@strong{Return value:}  the SCM object
+@end deftypefun
+
+@deftypefun {lw6ker_game_struct_t *} {lw6_scm_to_game_struct} (lw6sys_context_t * @var{sys_context}, SCM @var{game_struct})
+@var{sys_context}:  global system context
+
+@var{game_struct}:  the game_struct to convert (SCM object)
+
+Gets the internal C pointer corresponding to the
+scheme 'game_struct' object.
+
+@strong{Return value:}  a pointer, *not* a copy, must not be freed
+@end deftypefun
+
+@deftypefun {void} {lw6_free_game_struct_smob} (lw6sys_context_t * @var{sys_context}, lw6_game_struct_smob_t * @var{game_struct_smob})
+@var{sys_context}:  global system context
+
+@var{game_struct_smob}:  the smob to free
+
+Frees a game_struct smob, we need a special function to do
+that as structures like assoc hold pointers to these
+objects and therefore need a proper callback when being
+destroyed.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {SCM} {lw6_make_scm_game_state} (lw6sys_context_t * @var{sys_context}, lw6ker_game_state_t * @var{c_game_state}, SCM @var{game_struct})
+@var{sys_context}:  global system context
+
+@var{c_game_state}:  the game state object
+
+@var{game_struct}:  the game struct (SCM object) referenced
+
+Creates an SCM 'game_state' object from C data.
+Passing game_struct enables the garbage collector not
+to free the game_struct until the game_state is freed.
+
+@strong{Return value:}  the SCM object
+@end deftypefun
+
+@deftypefun {lw6ker_game_state_t *} {lw6_scm_to_game_state} (lw6sys_context_t * @var{sys_context}, SCM @var{game_state})
+@var{sys_context}:  global system context
+
+@var{game_state}:  the game_state to convert (SCM object)
+
+Gets the internal C pointer corresponding to the
+scheme 'game_state' object.
+
+@strong{Return value:}  a pointer, *not* a copy, must not be freed
+@end deftypefun
+
+@deftypefun {void} {lw6_free_game_state_smob} (lw6sys_context_t * @var{sys_context}, lw6_game_state_smob_t * @var{game_state_smob})
+@var{sys_context}:  global system context
+
+@var{game_state_smob}:  the smob to free
+
+Frees a game_state smob, we need a special function to do
+that as structures like assoc hold pointers to these
+objects and therefore need a proper callback when being
+destroyed.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {SCM} {lw6_make_scm_pilot} (lw6sys_context_t * @var{sys_context}, lw6pil_pilot_t * @var{c_pilot})
+@var{sys_context}:  global system context
+
+@var{c_pilot}:  the pilot object
+
+Creates an SCM 'pilot' object from C data.
+
+@strong{Return value:}  the SCM object
+@end deftypefun
+
+@deftypefun {lw6pil_pilot_t *} {lw6_scm_to_pilot} (lw6sys_context_t * @var{sys_context}, SCM @var{pilot})
+@var{sys_context}:  global system context
+
+@var{pilot}:  the pilot to convert (SCM object)
+
+Gets the internal C pointer corresponding to the
+scheme 'pilot' object.
+
+@strong{Return value:}  a pointer, *not* a copy, must not be freed
+@end deftypefun
+
+@deftypefun {void} {lw6_free_pilot_smob} (lw6sys_context_t * @var{sys_context}, lw6_pilot_smob_t * @var{pilot_smob})
+@var{sys_context}:  global system context
+
+@var{pilot_smob}:  the smob to free
+
+Frees a pilot smob, we need a special function to do
+that as structures like assoc hold pointers to these
+objects and therefore need a proper callback when being
+destroyed.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {SCM} {lw6_make_scm_bot} (lw6sys_context_t * @var{sys_context}, lw6bot_backend_t * @var{c_bot}, SCM @var{game_state}, SCM @var{pilot})
+@var{sys_context}:  global system context
+
+@var{c_bot}:  the bot object
+
+@var{game_state}:  the game state
+
+@var{pilot}:  the pilot
+
+Creates an SCM 'bot' object from C data.
+Passing game_state and pilot enables the garbage collector
+not the free them until bot is freed.
+
+@strong{Return value:}  the SCM object
+@end deftypefun
+
+@deftypefun {lw6bot_backend_t *} {lw6_scm_to_bot} (lw6sys_context_t * @var{sys_context}, SCM @var{bot})
+@var{sys_context}:  global system context
+
+@var{bot}:  the bot to convert (SCM object)
+
+Gets the internal C pointer corresponding to the
+scheme 'bot' object.
+
+@strong{Return value:}  a pointer, *not* a copy, must not be freed
+@end deftypefun
+
+@deftypefun {void} {lw6_free_bot_smob} (lw6sys_context_t * @var{sys_context}, lw6_bot_smob_t * @var{bot_smob})
+@var{sys_context}:  global system context
+
+@var{bot_smob}:  the smob to free
+
+Frees a bot smob, we need a special function to do
+that as structures like assoc hold pointers to these
+objects and therefore need a proper callback when being
+destroyed.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {SCM} {lw6_make_scm_look} (lw6sys_context_t * @var{sys_context}, lw6gui_look_t * @var{c_look})
+@var{sys_context}:  global system context
+
+@var{c_look}:  the look object
+
+Creates an SCM 'look' object from C data.
+
+@strong{Return value:}  the SCM object
+@end deftypefun
+
+@deftypefun {lw6gui_look_t *} {lw6_scm_to_look} (lw6sys_context_t * @var{sys_context}, SCM @var{look})
+@var{sys_context}:  global system context
+
+@var{look}:  the look to convert (SCM object)
+
+Gets the internal C pointer corresponding to the
+scheme 'look' object.
+
+@strong{Return value:}  a pointer, *not* a copy, must not be freed
+@end deftypefun
+
+@deftypefun {void} {lw6_free_look_smob} (lw6sys_context_t * @var{sys_context}, lw6_look_smob_t * @var{look_smob})
+@var{sys_context}:  global system context
+
+@var{look_smob}:  the smob to free
+
+Frees a look smob, we need a special function to do
+that as structures like assoc hold pointers to these
+objects and therefore need a proper callback when being
+destroyed.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {SCM} {lw6_make_scm_loader} (lw6sys_context_t * @var{sys_context}, lw6tsk_loader_t * @var{c_loader})
+@var{sys_context}:  global system context
+
+@var{c_loader}:  the loader object
+
+Creates an SCM 'loader' object from C data.
+
+@strong{Return value:}  the SCM object
+@end deftypefun
+
+@deftypefun {lw6tsk_loader_t *} {lw6_scm_to_loader} (lw6sys_context_t * @var{sys_context}, SCM @var{loader})
+@var{sys_context}:  global system context
+
+@var{loader}:  the loader to convert (SCM object)
+
+Gets the internal C pointer corresponding to the
+scheme 'loader' object.
+
+@strong{Return value:}  a pointer, *not* a copy, must not be freed
+@end deftypefun
+
+@deftypefun {void} {lw6_free_loader_smob} (lw6sys_context_t * @var{sys_context}, lw6_loader_smob_t * @var{loader_smob})
+@var{sys_context}:  global system context
+
+@var{loader_smob}:  the smob to free
+
+Frees a loader smob, we need a special function to do
+that as structures like assoc hold pointers to these
+objects and therefore need a proper callback when being
+destroyed.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {SCM} {lw6_make_scm_db} (lw6sys_context_t * @var{sys_context}, lw6p2p_db_t * @var{c_db})
+@var{sys_context}:  global system context
+
+@var{c_db}:  the database object
+
+Creates an SCM 'db' object from C data.
+
+@strong{Return value:}  the SCM object
+@end deftypefun
+
+@deftypefun {lw6p2p_db_t *} {lw6_scm_to_db} (lw6sys_context_t * @var{sys_context}, SCM @var{db})
+@var{sys_context}:  global system context
+
+@var{db}:  the db to convert (SCM object)
+
+Gets the internal C pointer corresponding to the
+scheme 'db' object.
+
+@strong{Return value:}  a pointer, *not* a copy, must not be freed
+@end deftypefun
+
+@deftypefun {void} {lw6_free_db_smob} (lw6sys_context_t * @var{sys_context}, lw6_db_smob_t * @var{db_smob})
+@var{sys_context}:  global system context
+
+@var{db_smob}:  the smob to free
+
+Frees a db smob, we need a special function to do
+that as structures like assoc hold pointers to these
+objects and therefore need a proper callback when being
+destroyed.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {SCM} {lw6_make_scm_node} (lw6sys_context_t * @var{sys_context}, lw6p2p_node_t * @var{c_node}, SCM @var{db})
+@var{sys_context}:  global system context
+
+@var{c_node}:  the node object
+
+@var{db}:  the db (SCM object) referenced
+
+Creates an SCM 'node' object from C data.
+Passing db enables the garbage collector not to
+free db until node is freed.
+
+@strong{Return value:}  the SCM object
+@end deftypefun
+
+@deftypefun {lw6p2p_node_t *} {lw6_scm_to_node} (lw6sys_context_t * @var{sys_context}, SCM @var{node})
+@var{sys_context}:  global system context
+
+@var{node}:  the node to convert (SCM object)
+
+Gets the internal C pointer corresponding to the
+scheme 'node' object.
+
+@strong{Return value:}  a pointer, *not* a copy, must not be freed
+@end deftypefun
+
+@deftypefun {void} {lw6_free_node_smob} (lw6sys_context_t * @var{sys_context}, lw6_node_smob_t * @var{node_smob})
+@var{sys_context}:  global system context
+
+@var{node_smob}:  the smob to free
+
+Frees a node smob, we need a special function to do
+that as structures like assoc hold pointers to these
+objects and therefore need a proper callback when being
+destroyed.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {SCM} {lw6_make_scm_jpeg} (lw6sys_context_t * @var{sys_context}, lw6img_jpeg_t * @var{c_jpeg})
+@var{sys_context}:  global system context
+
+@var{c_jpeg}:  the database object
+
+Creates an SCM 'jpeg' object from C data.
+
+@strong{Return value:}  the SCM object
+@end deftypefun
+
+@deftypefun {lw6img_jpeg_t *} {lw6_scm_to_jpeg} (lw6sys_context_t * @var{sys_context}, SCM @var{jpeg})
+@var{sys_context}:  global system context
+
+@var{jpeg}:  the jpeg to convert (SCM object)
+
+Gets the internal C pointer corresponding to the
+scheme 'jpeg' object.
+
+@strong{Return value:}  a pointer, *not* a copy, must not be freed
+@end deftypefun
+
+@deftypefun {void} {lw6_free_jpeg_smob} (lw6sys_context_t * @var{sys_context}, lw6_jpeg_smob_t * @var{jpeg_smob})
+@var{sys_context}:  global system context
+
+@var{jpeg_smob}:  the smob to free
+
+Frees a jpeg smob, we need a special function to do
+that as structures like assoc hold pointers to these
+objects and therefore need a proper callback when being
+destroyed.
+
+@strong{Return value:}  none
+@end deftypefun
+
+@deftypefun {int} {lw6_register_smobs} (lw6sys_context_t * @var{sys_context})
+@var{sys_context}:  global system context
+
+Register all smobs to Guile.
+
+@strong{Return value:}  1 on success, 0 if failed.
+@end deftypefun
+
+@deftypefun {int} {lw6_test_register} (lw6sys_context_t * @var{sys_context}, int @var{mode})
+@var{sys_context}:  global system context
+
+@var{mode}:  test mode (bitmask)
+
+Registers all tests for the lw6 module.
+
+@strong{Return value:}  1 if test is successfull, 0 on error.
+@end deftypefun
+
+@deftypefun {int} {lw6_test_run} (lw6sys_context_t * @var{sys_context}, int @var{mode})
+@var{sys_context}:  global system context
+
+@var{mode}:  test mode (bitmask)
+
+Runs the liquidwar6 core module test suite, this will mostly
+test how Guile script integration works, loading a sample
+script and running it. It does not launch all the other sub
+modules tests.
+
+@strong{Return value:}  1 if test is successfull, 0 on error.
+@end deftypefun
+

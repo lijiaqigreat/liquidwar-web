@@ -1,0 +1,1699 @@
+# French translations for liquidwar6 package.
+# Copyright (C) 2012 Christian Mauduit
+# This file is distributed under the same license as the liquidwar6 package.
+# Christian Mauduit <ufoot@ufoot.org>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: liquidwar6 dev\n"
+"Report-Msgid-Bugs-To: ufoot@ufoot.org\n"
+"POT-Creation-Date: 2015-05-06 12:57+0200\n"
+"PO-Revision-Date: 2008-12-30 21:46+0100\n"
+"Last-Translator: Christian Mauduit <ufoot@ufoot.org>\n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/lib/bot/mod-brute/mod-brute-backend.c:129
+msgid "Brute"
+msgstr "Brute"
+
+#: src/lib/bot/mod-follow/mod-follow-backend.c:129
+msgid "Follow"
+msgstr "Suiveur"
+
+#: src/lib/bot/mod-idiot/mod-idiot-backend.c:129
+msgid "Idiot"
+msgstr "Débile"
+
+#: src/lib/bot/mod-random/mod-random-backend.c:129
+msgid "Random"
+msgstr "Aléatoire"
+
+#: src/lib/cli/mod-http/mod-http-backend.c:196
+msgid "HTTP (Curl)"
+msgstr "HTTP (Curl)"
+
+#: src/lib/cli/mod-http/mod-http-setup.c:76
+msgid "can't initialize mod_http"
+msgstr "impossible d'initialiser mod_http"
+
+#: src/lib/cli/mod-tcp/mod-tcp-backend.c:196
+msgid "TCP"
+msgstr "TCP"
+
+#: src/lib/cli/mod-tcp/mod-tcp-setup.c:65
+msgid "can't initialize mod_tcp"
+msgstr "impossible d'initialiser mod_tcp"
+
+#: src/lib/cli/mod-udp/mod-udp-backend.c:196
+msgid "UDP"
+msgstr "UDP"
+
+#: src/lib/cli/mod-udp/mod-udp-setup.c:65
+msgid "can't initialize mod_udp"
+msgstr "impossible d'initialiser mod_udp"
+
+#: src/lib/dsp/dsp-test.c:299
+msgid "this error too"
+msgstr "cette erreur aussi"
+
+#: src/lib/dyn/dyn-dl.c:240
+#, c-format
+msgid "loaded module \"%s\""
+msgstr "chargement du module \"%s\""
+
+#: src/lib/gfx/mod-caca/mod-caca-backend.c:178
+msgid "libcaca"
+msgstr ""
+
+#: src/lib/gfx/mod-caca/mod-caca-setup.c:102
+#: src/lib/gfx/mod-gl1/mod-gl1-setup.c:323
+#: src/lib/gfx/mod-gles2/mod-gles2-setup.c:131
+#: src/lib/gfx/mod-soft/mod-soft-setup.c:131
+msgid "unable to set video mode"
+msgstr "impossible de régler le mode vidéo"
+
+#: src/lib/gfx/mod-caca/mod-caca-setup.c:110
+#, fuzzy, c-format
+msgid "unable to create canvas %dx%d"
+msgstr "impossible de lire la ligne de 'credits' %d"
+
+#: src/lib/gfx/mod-caca/mod-caca-setup.c:118
+#, fuzzy
+msgid "unable to set resize callback"
+msgstr "impossible de régler le mode vidéo"
+
+#: src/lib/gfx/mod-caca/mod-caca-setup.c:125
+#: src/lib/gfx/mod-gl1/mod-gl1-setup.c:330
+#: src/lib/gfx/mod-gles2/mod-gles2-setup.c:138
+#: src/lib/gfx/mod-soft/mod-soft-setup.c:138
+msgid "unable to load consts"
+msgstr "impossible de lire les constantes"
+
+#: src/lib/gfx/mod-caca/mod-caca-setup.c:132
+#, fuzzy
+msgid "unable to init paths"
+msgstr "impossible de charger les données"
+
+#: src/lib/gfx/mod-gl1/gl1-utils/gl1-utils-data.c:66
+#, c-format
+msgid "unable to load image \"%s\""
+msgstr "impossible de charger l'image \"%s\""
+
+#: src/lib/gfx/mod-gl1/gl1-utils/gl1-utils-data.c:100
+#, c-format
+msgid "unable to load font \"%s\""
+msgstr "impossible de charger la police \"%s\""
+
+#: src/lib/gfx/mod-gl1/gl1-utils/gl1-utils-mode.c:74
+#: src/lib/gfx/mod-gles2/mod-gles2-mode.c:71
+#: src/lib/gfx/mod-soft/mod-soft-mode.c:71
+#, c-format
+msgid "SDL GetVideoInfo failed: \"%s\""
+msgstr "SDL GetVideoInfo a échoué: \"%s\""
+
+#: src/lib/gfx/mod-gl1/gl1-utils/gl1-utils-mode.c:166
+#: src/lib/gfx/mod-gles2/mod-gles2-mode.c:163
+#: src/lib/gfx/mod-soft/mod-soft-mode.c:124
+#, c-format
+msgid "SDL SetVideoMode %dx%d bpp=%d fullscreen=%d failed: \"%s\""
+msgstr "SDL SetVideoMode %dx%d bpp=%d fullscreen=%d a échoué: \"%s\""
+
+#: src/lib/gfx/mod-gl1/mod-gl1-backend.c:312
+#, fuzzy
+msgid "OpenGL v1 / SDL"
+msgstr "OpenGL/SDL"
+
+#: src/lib/gfx/mod-gl1/mod-gl1-setup.c:259
+#: src/lib/gfx/mod-gles2/mod-gles2-setup.c:86
+#: src/lib/gfx/mod-soft/mod-soft-setup.c:86
+#, c-format
+msgid "SDL init error: \"%s\""
+msgstr "SDL erreur d'initialisation: \"%s\""
+
+#: src/lib/gfx/mod-gl1/mod-gl1-setup.c:283
+#: src/lib/gfx/mod-gles2/mod-gles2-setup.c:109
+#: src/lib/gfx/mod-soft/mod-soft-setup.c:109
+#, c-format
+msgid "SDL_ttf init error: \"%s\""
+msgstr "SDL_ttf erreur d'initialisation: \"%s\""
+
+#: src/lib/gfx/mod-gl1/mod-gl1-setup.c:316
+msgid "unable to load data"
+msgstr "impossible de charger les données"
+
+#: src/lib/gfx/mod-gles2/mod-gles2-backend.c:178
+#, fuzzy
+msgid "OpenGL ES v2 / SDL"
+msgstr "OpenGL/SDL"
+
+#: src/lib/gfx/mod-soft/mod-soft-backend.c:178
+msgid "Software / SDL"
+msgstr ""
+
+#: src/lib/hlp/hlp-credits.c:81
+#, c-format
+msgid "Codename \"%s\""
+msgstr "Nom de code \"%s\""
+
+#: src/lib/hlp/hlp-credits.c:87
+#, c-format
+msgid "Idea: %s"
+msgstr "Idée : %s"
+
+#: src/lib/hlp/hlp-credits.c:90
+#, c-format
+msgid "Programming: %s"
+msgstr "Programmation : %s"
+
+#: src/lib/hlp/hlp-credits.c:93
+#, c-format
+msgid "Artwork & design: %s"
+msgstr "Graphismes, design: %s"
+
+#: src/lib/hlp/hlp-credits.c:96
+#, c-format
+msgid "Menu music: %s"
+msgstr "Musique des menus : %s"
+
+#: src/lib/hlp/hlp-credits.c:99
+msgid "Thanks to all Liquid War 5 contributors"
+msgstr "Merci à tous les contributeurs de Liquid War 5"
+
+#: src/lib/hlp/hlp-credits.c:102
+#, c-format
+msgid "Extra maps: %s"
+msgstr "Tableaux supplémentaires : %s"
+
+#: src/lib/hlp/hlp-credits.c:105 src/lib/hlp/hlp-credits.c:108
+#: src/lib/hlp/hlp-credits.c:111
+#, c-format
+msgid "Song \"%s\" by %s"
+msgstr "Chanson \"%s\" par %s"
+
+#: src/lib/hlp/hlp-credits.c:114
+#, c-format
+msgid "Norwegian translation by %s"
+msgstr "Traduction en norvégien par %s"
+
+#: src/lib/hlp/hlp-credits.c:117
+#, c-format
+msgid "Russian translation by %s"
+msgstr "Traduction en russe par %s"
+
+#: src/lib/hlp/hlp-credits.c:120
+#, c-format
+msgid "Libcaca port by %s"
+msgstr ""
+
+#: src/lib/hlp/hlp-credits.c:123
+#, c-format
+msgid "Handicap patch by %s"
+msgstr ""
+
+#: src/lib/hlp/hlp-credits.c:126
+msgid "Thanks to all other contributors"
+msgstr "Merci à tous les autres contributeurs"
+
+#: src/lib/hlp/hlp-credits.c:129
+msgid "Help is always appreciated"
+msgstr "L'aide est toujours appréciée"
+
+#: src/lib/hlp/hlp-credits.c:132
+#, c-format
+msgid "Mailing list: <%s>"
+msgstr "Liste de diffusion : <%s>"
+
+#: src/lib/hlp/hlp-credits.c:135
+msgid "Free as in \"free speech\" (not beer)"
+msgstr "Ceci est un Logiciel Libre"
+
+#: src/lib/hlp/hlp-credits.c:138
+#, c-format
+msgid "License: %s"
+msgstr "Licence : %s"
+
+#: src/lib/hlp/hlp-credits.c:144
+#, c-format
+msgid "Built on %s at %s"
+msgstr "Compilé le %s à %s"
+
+#: src/lib/hlp/hlp-credits.c:147
+#, c-format
+msgid "Help GNU %s"
+msgstr "Aidez GNU %s"
+
+#: src/lib/hlp/hlp-credits.c:150
+#, c-format
+msgid "Fight software patents %s"
+msgstr "Contre les brevets logiciels %s"
+
+#: src/lib/hlp/hlp-credits.c:153 src/lib/hlp/hlp-print.c:260
+#: src/lib/sys/sys-log.c:758
+msgid "Report bugs"
+msgstr "Soummission de bugs"
+
+#: src/lib/hlp/hlp-credits.c:156
+#, c-format
+msgid "unable to handle credits id %d"
+msgstr "impossible de lire la ligne de 'credits' %d"
+
+#: src/lib/hlp/hlp-options.c:88
+#, c-format
+msgid "unknown option \"%s\""
+msgstr "option inconnue \"%s\""
+
+#: src/lib/hlp/hlp-options.c:107
+msgid "unable to start daemon"
+msgstr "impossible de démarrer le démon"
+
+#: src/lib/hlp/hlp-print.c:249
+#, c-format
+msgid "Usage: %s [--option1[=value1]] ... [--optionN[=valueN]]\n"
+msgstr "Usage: %s [--option1[=value1]] ... [--optionN[=valueN]]\n"
+
+#: src/lib/hlp/hlp-print.c:259
+msgid "Home page"
+msgstr "Page d'accueil"
+
+#: src/lib/hlp/hlp-print.c:297
+#, c-format
+msgid ""
+"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
+"html>\n"
+"This is free software: you are free to change and redistribute it.\n"
+"There is NO WARRANTY, to the extent permitted by law.\n"
+msgstr ""
+"License GPLv3+: Licence Générale Publique GNU version 3 ou supérieure "
+"<http://gnu.org/licenses/gpl.html>\n"
+"Ceci est un logiciel libre et vous êtes invité à le redistribuer suivant "
+"certaines conditions.\n"
+"Ce programme vient SANS ABSOLUMENT AUCUNE GARANTIE.\n"
+
+#: src/lib/hlp/hlp-print.c:1201
+msgid "hello"
+msgstr "bonjour"
+
+#: src/lib/hlp/hlp-print.c:1249
+msgid "goodbye"
+msgstr "au revoir"
+
+#: src/lib/hlp/hlp-refteamcolors.c:36
+msgid "moves faster than the average"
+msgstr "se déplace plus vite que les autres"
+
+#: src/lib/hlp/hlp-refteamcolors.c:37
+msgid "has a better defense than the average"
+msgstr "a une meilleure défense que les autres"
+
+#: src/lib/hlp/hlp-refteamcolors.c:38
+msgid "has a strong attack but is slow"
+msgstr "a une attaque forte, mais se déplace lentement"
+
+#: src/lib/hlp/hlp-refteamcolors.c:39
+msgid "has a strong attack"
+msgstr "a une attaque forte"
+
+#: src/lib/hlp/hlp-refteamcolors.c:40
+msgid "has an extremely good defense but is slow"
+msgstr "extrêmement bon en défense, mais très lent"
+
+#: src/lib/hlp/hlp-refteamcolors.c:41
+msgid "is extremely fast but also very vulnerable"
+msgstr "extrêmement rapide, mais aussi très vulnérable"
+
+#: src/lib/hlp/hlp-refteamcolors.c:42
+msgid "is fast, but has a very weak attack"
+msgstr "rapide, mais avec peu d'attaque"
+
+#: src/lib/hlp/hlp-refteamcolors.c:43
+msgid "has an extremely strong attack but is very slow"
+msgstr "attaque très forte, mais très lent"
+
+#: src/lib/hlp/hlp-refteamcolors.c:44
+msgid "has a very good defense but a weak attack"
+msgstr "très bonne défense mais attaque faible"
+
+#: src/lib/hlp/hlp-refteamcolors.c:45
+msgid "has a very strong attack, but is also very vulnerable"
+msgstr "attaque très forte, et aussi très vulnérable"
+
+#: src/lib/hlp/hlp-refweapons.c:36
+msgid "super-strong attack for a limited time, crush your enemies"
+msgstr "attaque super forte pour un temps limité, écrasez vos ennemis"
+
+#: src/lib/hlp/hlp-refweapons.c:37
+msgid "no damage for a limited time, move untouched"
+msgstr "pas de dégâts pendant un certain temps, ne craignez plus rien"
+
+#: src/lib/hlp/hlp-refweapons.c:38
+msgid ""
+"fighters placed as far as possible from cursor, magically escape from any "
+"grip"
+msgstr ""
+"les combattants sont placés aussi loin que possible du curseur, échappant à "
+"n'importe quel éteau"
+
+#: src/lib/hlp/hlp-refweapons.c:39
+msgid "move faster for a limited time"
+msgstr "déplacement plus rapide pendant un certain temps"
+
+#: src/lib/hlp/hlp-refweapons.c:40
+msgid "fighters placed as close as possible to cursor"
+msgstr "les combattants sont placés au plus près du curseur"
+
+#: src/lib/hlp/hlp-refweapons.c:41
+msgid "every fighters of every team scattered in random places"
+msgstr "tous les combattants se retrouvent éparpillés n'importe où"
+
+#: src/lib/hlp/hlp-refweapons.c:42
+msgid "all other teams are freezed, you can move but not attack them"
+msgstr ""
+"toutes les autres couleurs sont figées sur place, vous pouvez vos déplacer "
+"sans attaquer"
+
+#: src/lib/hlp/hlp-refweapons.c:43
+msgid "fighters exchange position, their properties being preserved"
+msgstr "toutes les autres équipes sont fig;ees sur pl"
+
+#: src/lib/hlp/hlp-refweapons.c:44
+msgid ""
+"you take the control of all other teams while your cursor stays in place"
+msgstr ""
+"vous prenez le contrôle des autres équipes, pendant ce temps-là votre "
+"curseur reste à sa place"
+
+#: src/lib/hlp/hlp-refweapons.c:45
+msgid ""
+"will exchange colors, randomly, requires at least 3 teams (double edged "
+"weapon)"
+msgstr "échange les couleurs, au hasard, nécessite au moins 3 couleurs"
+
+#: src/lib/hlp/hlp-refweapons.c:46
+msgid "steals some fighters to other teams"
+msgstr "vole des combattants aux autres équipes"
+
+#: src/lib/hlp/hlp-refweapons.c:47
+msgid "nuclear explosion, all fighters arround your cursor are about to die"
+msgstr ""
+"explosion nucléaire, tous les combattants autour de votre curseur sont morts "
+"ou presque"
+
+#: src/lib/hlp/hlp-refweapons.c:48
+msgid ""
+"fighters continue to move normally, but attacks are done in reverse mode, "
+"backwards"
+msgstr ""
+"les combattans continuent à se déplacer normalement, mais ils attaquent à "
+"l'envers, par derrière"
+
+#: src/lib/hlp/hlp-refweapons.c:49
+msgid "all your opponents go crazy for some time, acting with no logic"
+msgstr ""
+"tous vos ennemis deviennent fou pendant quelques temps, agissant sans logique"
+
+#: src/lib/hlp/hlp-refweapons.c:50
+msgid "make the battlefield be like it was a few seconds ago"
+msgstr "remet le champs de bataille tel qu'il était quelques secondes avant"
+
+#: src/lib/hlp/hlp-refweapons.c:51
+msgid "all fighters from all teams are packed near your cursor"
+msgstr ""
+"tous les combattants de toutes les équipes sont réunis autour de votre "
+"curseur"
+
+#: src/lib/hlp/hlp-refweapons.c:52
+msgid "reduces the number of fighters on the map"
+msgstr "réduit le nombre de combattants dans le tableau"
+
+#: src/lib/hlp/hlp-refweapons.c:53
+msgid ""
+"you die along with the strongest team on the battlefield, requires at least "
+"3 teams"
+msgstr ""
+"vous mourrez et emportez dans votre mort la puissante des autres équipes, "
+"nécessite 3 équipes"
+
+#: src/lib/hlp/hlp-refweapons.c:54
+msgid ""
+"you disappear for some time from the battlefield, to reappear later, "
+"somewhere else"
+msgstr ""
+"vous disparaissez pour quelques temps, pour réapparaitre plus tard, ailleurs"
+
+#: src/lib/hlp/hlp-refweapons.c:55
+msgid "general disease, all fighters mysteriously loose health"
+msgstr ""
+"maladie généralisée, les combattants perdent mystérieusement des points de "
+"santé"
+
+#: src/lib/ldr/ldr-exp.c:65
+#, c-format
+msgid "You just gained experience (exp=%d)."
+msgstr "Vous venez de gagner de l'expérience (exp=%d)."
+
+#: src/lib/lw6-fix.c:315
+msgid "couldn't fix environment variable by restarting program"
+msgstr "impossible de redémarrer en corrigeant les variables d'environnement"
+
+#: src/lib/lw6-main.c:55
+#, c-format
+msgid "unable to read main script file \"%s\""
+msgstr "impossible de lire le fichier de script principal \"%s\""
+
+#: src/lib/lw6-options.c:136 src/lib/lw6-options.c:180
+msgid "all tests SUCCESSFULL!"
+msgstr "tous les tests passés avec SUCCÈS!"
+
+#: src/lib/lw6-options.c:140 src/lib/lw6-options.c:184
+#, c-format
+msgid "test FAILED, see log file \"%s\" for details"
+msgstr ""
+"le test a ÉCHOUÉ, voir le fichier de log \"%s\" pour plus d'informations"
+
+#: src/lib/map/map-color.c:205
+msgid "Red"
+msgstr "Rouge"
+
+#: src/lib/map/map-color.c:208
+msgid "Green"
+msgstr "Vert"
+
+#: src/lib/map/map-color.c:211
+msgid "Blue"
+msgstr "Bleu"
+
+#: src/lib/map/map-color.c:214
+msgid "Yellow"
+msgstr "Jaune"
+
+#: src/lib/map/map-color.c:217
+msgid "Cyan"
+msgstr "Cyan"
+
+#: src/lib/map/map-color.c:220
+msgid "Magenta"
+msgstr "Magenta"
+
+#: src/lib/map/map-color.c:223
+msgid "Orange"
+msgstr "Orange"
+
+#: src/lib/map/map-color.c:226
+msgid "Light blue"
+msgstr "Bleu clair"
+
+#: src/lib/map/map-color.c:229
+msgid "Purple"
+msgstr "Mauve"
+
+#: src/lib/map/map-color.c:232
+msgid "Pink"
+msgstr "Rose"
+
+#: src/lib/map/map-color.c:235
+msgid "Invalid color"
+msgstr "Couleur invalide"
+
+#: src/lib/map/map-weapon.c:236
+msgid "Berzerk"
+msgstr "Berzerk"
+
+#: src/lib/map/map-weapon.c:239
+msgid "Invincible"
+msgstr "Invincible"
+
+#: src/lib/map/map-weapon.c:242
+msgid "Escape"
+msgstr "Fuir"
+
+#: src/lib/map/map-weapon.c:245
+msgid "Turbo"
+msgstr "Turbo"
+
+#: src/lib/map/map-weapon.c:248
+msgid "Teleport"
+msgstr "Téléporter"
+
+#: src/lib/map/map-weapon.c:251
+msgid "Scatter"
+msgstr "Éparpiller"
+
+#: src/lib/map/map-weapon.c:254
+msgid "Fix"
+msgstr "Immobile"
+
+#: src/lib/map/map-weapon.c:257
+msgid "Mix"
+msgstr "Mélange"
+
+#: src/lib/map/map-weapon.c:260 src/scriptpo.c:156
+msgid "Control"
+msgstr "Contrôle"
+
+#: src/lib/map/map-weapon.c:263
+msgid "Permutation"
+msgstr "Permutation"
+
+#: src/lib/map/map-weapon.c:266
+msgid "Steal"
+msgstr "Vol"
+
+#: src/lib/map/map-weapon.c:269
+msgid "Atomic"
+msgstr "Atomique"
+
+#: src/lib/map/map-weapon.c:272
+msgid "Reverse"
+msgstr "À l'envers"
+
+#: src/lib/map/map-weapon.c:275
+msgid "Crazy"
+msgstr "Folie"
+
+#: src/lib/map/map-weapon.c:278
+msgid "Rewind"
+msgstr "Renbobiner"
+
+#: src/lib/map/map-weapon.c:281
+msgid "Attract"
+msgstr "Attirer"
+
+#: src/lib/map/map-weapon.c:284
+msgid "Shrink"
+msgstr "Rapetisser"
+
+#: src/lib/map/map-weapon.c:287
+msgid "Kamikaze"
+msgstr "Kamikaze"
+
+#: src/lib/map/map-weapon.c:290
+msgid "Disappear"
+msgstr "Disparition"
+
+#: src/lib/map/map-weapon.c:293
+msgid "Plague"
+msgstr "Pest"
+
+#: src/lib/map/map-weapon.c:296
+msgid "No weapon"
+msgstr "Pas de coup spécial"
+
+#: src/lib/p2p/p2p-data.c:99
+#, c-format
+msgid "can't read query \"%s\" in \"%s\""
+msgstr "impossible de lire la requête \"%s\" dans \"%s\""
+
+#: src/lib/p2p/p2p-node.c:238
+#, c-format
+msgid "started node \"%s\" in trojan mode, expect problems"
+msgstr ""
+"démarrage du noeud \"%s\" en mode cheval de troie, attendez-vous à "
+"rencontrer des problèmes"
+
+#: src/lib/p2p/p2p-node.c:242
+#, c-format
+msgid "started node \"%s\""
+msgstr "démarrage du noeud \"%s\""
+
+#: src/lib/p2p/p2p-recv.c:186
+#, c-format
+msgid "communication established \"%s\" <-> \"%s\" on %s:%d"
+msgstr "communication établie \"%s\" <-> \"%s\" sur %s:%d"
+
+#: src/lib/scm/scm-test.c:245 src/lib/scm/scm-test.c:377
+#, c-format
+msgid "leaving Guile in %s"
+msgstr "fin de Guile dans %s"
+
+#: src/lib/snd/mod-csound/mod-csound-backend.c:230
+msgid "Csound"
+msgstr "Csound"
+
+#: src/lib/snd/mod-ogg/mod-ogg-backend.c:230
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+#: src/lib/srv/mod-httpd/mod-httpd-backend.c:256
+msgid "HTTPD"
+msgstr "HTTPD"
+
+#: src/lib/srv/mod-httpd/mod-httpd-setup.c:115
+msgid "can't initialize mod_httpd"
+msgstr "impossible d'initialiser mod_httpd"
+
+#: src/lib/srv/mod-tcpd/mod-tcpd-backend.c:255
+msgid "TCPD"
+msgstr "TCPD"
+
+#: src/lib/srv/mod-tcpd/mod-tcpd-setup.c:65
+msgid "can't initialize mod_tcpd"
+msgstr "impossible d'initialiser mod_tcpd"
+
+#: src/lib/srv/mod-udpd/mod-udpd-backend.c:256
+msgid "UDPD"
+msgstr "UDPD"
+
+#: src/lib/srv/mod-udpd/mod-udpd-setup.c:65
+msgid "can't initialize mod_udpd"
+msgstr "impossible d'initialiser mod_udpd"
+
+#: src/lib/sys/sys-log.c:82
+msgid "log_file is NULL"
+msgstr "Le fichier de log est NULL"
+
+#: src/lib/sys/sys-log.c:553
+#, c-format
+msgid "can't open log file \"%s\""
+msgstr "impossible d'ouvrir le fichier de log \"%s\""
+
+#: src/lib/sys/sys-log.c:758
+msgid "Backtrace"
+msgstr "Trace"
+
+#: src/lib/sys/sys-log.c:926
+#, c-format
+msgid "ERROR! (errno=%d:%s) "
+msgstr "ERREUR! (errno=%d:%s)"
+
+#: src/lib/sys/sys-log.c:930
+msgid "ERROR! "
+msgstr "ERREUR! "
+
+#: src/lib/sys/sys-log.c:940
+#, c-format
+msgid "WARNING! (errno=%d:%s) "
+msgstr "ATTENTION! (errno=%d:%s) "
+
+#: src/lib/sys/sys-log.c:944
+msgid "WARNING! "
+msgstr "ATTENTION! "
+
+#: src/lib/sys/sys-log.c:961
+msgid "[tmp] "
+msgstr "[temp] "
+
+#: src/lib/sys/sys-log.c:967
+msgid "[debug] "
+msgstr "[déboggage] "
+
+#: src/lib/sys/sys-log.c:1048
+msgid "CRITICAL! "
+msgstr "CRITIQUE! "
+
+#: src/lib/sys/sys-log.c:1052
+msgid "CRITICAL!"
+msgstr "CRITIQUE! "
+
+#: src/lib/sys/sys-mem.c:88
+#, fuzzy, c-format
+msgid "out of memory malloc (%d) failed in %s:%d %s()"
+msgstr "pas assez de mémoire, échec de malloc (%d) dans %s:%d"
+
+#: src/lib/sys/sys-mem.c:131
+#, fuzzy, c-format
+msgid "out of memory calloc(%d) failed in %s:%d %s()"
+msgstr "pas assez de mémoire, échec de calloc (%d) dans %s:%d"
+
+#: src/lib/sys/sys-mem.c:185
+#, fuzzy, c-format
+msgid "out of memory realloc (%d) failed in %s:%d %s()"
+msgstr "pas assez de mémoire, échec de realloc (%d) dans %s:%d"
+
+#: src/lib/sys/sys-mem.c:228
+#, fuzzy, c-format
+msgid "trying to free NULL pointer in %s:%d %s()"
+msgstr "tentative de libérer un pointeur nul dans %s:%d"
+
+#: src/lib/sys/sys-signal.c:247
+msgid "Segmentation fault"
+msgstr "Erreur de segmentation"
+
+#: src/lib/sys/sys-signal.c:291
+msgid "Floating point exception"
+msgstr "Erreur calcul flottant"
+
+#: src/scriptpo.c:1
+msgid "no gfx backend found"
+msgstr "aucun moteur graphique (gfx) trouvé"
+
+#: src/scriptpo.c:2
+msgid "no snd backend found"
+msgstr "aucun moteur de son (snd) trouvé"
+
+#: src/scriptpo.c:3
+msgid "gfx backend ~a not available"
+msgstr "moteur graphique (gfx)  ~a non disponible"
+
+#: src/scriptpo.c:4
+msgid "snd backend ~a not available"
+msgstr "moteur de son (snd) ~a non disponible"
+
+#: src/scriptpo.c:5
+msgid "Benchmarking your computer, thanks for your patience"
+msgstr "Estimation de la puissance de cet ordinateur"
+
+#: src/scriptpo.c:6
+msgid "Mouse"
+msgstr "Souris"
+
+#: src/scriptpo.c:7
+msgid "Keyboard"
+msgstr "Clavier"
+
+#: src/scriptpo.c:8
+msgid "Joystick 1"
+msgstr "Joystick 1"
+
+#: src/scriptpo.c:9
+msgid "Joystick 2"
+msgstr "Joystick 2"
+
+#: src/scriptpo.c:10
+msgid "Custom"
+msgstr "Sur mesure"
+
+#: src/scriptpo.c:11 src/scriptpo.c:16
+msgid "~a (mouse)"
+msgstr "~a (souris)"
+
+#: src/scriptpo.c:12
+msgid "~a (keyb)"
+msgstr "~a (clavier)"
+
+#: src/scriptpo.c:13
+msgid "~a (joy1)"
+msgstr "~a (joy1)"
+
+#: src/scriptpo.c:14
+msgid "~a (joy2)"
+msgstr "~a (joy2)"
+
+#: src/scriptpo.c:15
+msgid "~a (custom)"
+msgstr "~a (sur mesure)"
+
+#: src/scriptpo.c:17
+msgid ""
+"Move cursor: pointer~%Menu: left button~%Primary fire: right button~"
+"%Alternate fire: middle button~%Zoom: wheel"
+msgstr ""
+"Déplacement: pointeur~%Menu: bouton gauche~%Arme principale: bouton droit~"
+"%Arme secondaire: bouton du milieu~%Zoom: wheel"
+
+#: src/scriptpo.c:18
+msgid ""
+"Move cursor: arrows~%Menu: ENTER and ESC~%Primary fire: CTRL key~%Alternate "
+"fire: ALT key~%Zoom: PGUP and PGDOWN"
+msgstr ""
+"Déplacement: flèches~%Menu: ENTER et ESC~%Arme principale: CTRL key~%Arme "
+"secondaire: ALT~%Zoom: PGUP et PGDOWNfire: ALT key~%Zoom: PGUP and PGDOWN"
+
+#: src/scriptpo.c:19 src/scriptpo.c:20
+msgid ""
+"Move cursor: pad/stick~%Menu: A and B buttons~%Primary fire: C button~"
+"%Alternate fire: D button~%Zoom: E and F buttons"
+msgstr ""
+"Déplacement: pad/stick~%Menu: Boutons A et B~%Arme principale: bouton C~"
+"%Arme secondaire: bouton D~%Zoom: boutons E et F"
+
+#: src/scriptpo.c:21
+msgid "Not working yet"
+msgstr "Ne fonctionne pas encore"
+
+#: src/scriptpo.c:22 src/scriptpo.c:23
+msgid "Preparing map, this can take some time"
+msgstr "Préparation du tableau, cela peut prendre du temps"
+
+#: src/scriptpo.c:24
+msgid "scheme error"
+msgstr "erreur scheme"
+
+#: src/scriptpo.c:25
+msgid "running scheme code with Guile"
+msgstr "éxécution de code scheme depuis Guile"
+
+#: src/scriptpo.c:26
+msgid "leaving Guile"
+msgstr "fin de la session Guile"
+
+#: src/scriptpo.c:27
+msgid "catched Guile error"
+msgstr "erreur Guile \"catchée\""
+
+#: src/scriptpo.c:28
+msgid "begin main game loop"
+msgstr "début de la boucle de contrôle générale"
+
+#: src/scriptpo.c:29
+msgid "running \"~a\""
+msgstr "exécution de \"~a\""
+
+#: src/scriptpo.c:30
+msgid "log file \"~a\""
+msgstr "fichier de log \"~a\""
+
+#: src/scriptpo.c:31 src/scriptpo.c:32
+msgid "environment \"~a\" is \"~a\""
+msgstr "la variable d'environnement \"~a\" vaut \"~a\""
+
+#: src/scriptpo.c:33
+msgid "upgrading to version ~a"
+msgstr "mise à jour vers la version ~a"
+
+#: src/scriptpo.c:34
+msgid "no graphical backend found, game can only run in server mode"
+msgstr ""
+"aucun backend graphique trouvé, le jeu ne peut fonctionner qu'en mode "
+"serveur/console pur"
+
+#: src/scriptpo.c:35
+msgid "running in server mode"
+msgstr "lancé en mode serveur"
+
+#: src/scriptpo.c:36
+msgid "Connect \"~a\""
+msgstr ""
+
+#: src/scriptpo.c:37
+msgid "Connecting"
+msgstr ""
+
+#: src/scriptpo.c:38
+msgid "Please wait, connecting to remote server \"~a\" (~a)"
+msgstr ""
+
+#: src/scriptpo.c:39
+msgid "Esc"
+msgstr "Esc"
+
+#: src/scriptpo.c:40
+msgid "Quit"
+msgstr "Quit"
+
+#: src/scriptpo.c:41
+msgid "Yes, quit Liquid War 6"
+msgstr "Oui, quitter Liquid War 6"
+
+#: src/scriptpo.c:42
+msgid "Resume"
+msgstr "Continuer"
+
+#: src/scriptpo.c:43
+msgid "No, return back to game"
+msgstr "Non, retourner jouer"
+
+#: src/scriptpo.c:44
+msgid "Quit Liquid War 6?"
+msgstr "Quitter Liquid War 6?"
+
+#: src/scriptpo.c:45
+msgid "Procrastinating on games is mother of all vices"
+msgstr "La procrastination est mère de tous les vices"
+
+#: src/scriptpo.c:46
+msgid "Playing"
+msgstr "Jen en cours"
+
+#: src/scriptpo.c:47
+msgid "Game is running, press ESC to leave"
+msgstr "Le jeu est en cours, appuyer sur ESC pour en sortir"
+
+#: src/scriptpo.c:48
+msgid "no"
+msgstr "non"
+
+#: src/scriptpo.c:49 src/scriptpo.c:229
+msgid "Version"
+msgstr "Version"
+
+#: src/scriptpo.c:50
+msgid "Id"
+msgstr "Id"
+
+#: src/scriptpo.c:51
+msgid "URL"
+msgstr "URL"
+
+#: src/scriptpo.c:52 src/scriptpo.c:63
+msgid "Description"
+msgstr "Description"
+
+#: src/scriptpo.c:53
+msgid "Password"
+msgstr "Mot de passe"
+
+#: src/scriptpo.c:54 src/scriptpo.c:71
+msgid "Map"
+msgstr "Tableau"
+
+#: src/scriptpo.c:55
+msgid "No server found"
+msgstr "Aucun serveur trouvé"
+
+#: src/scriptpo.c:56
+msgid "No remote node could be found on the network"
+msgstr "Aucun noeud distant n'a pu être trouvé sur le réseau"
+
+#: src/scriptpo.c:57
+msgid "Join server"
+msgstr "Se connecter"
+
+#: src/scriptpo.c:58
+msgid ""
+"Choose a server and connect to it, all the nodes which you can technically "
+"connect to are listed, however you might not be able to connect to some of "
+"them, just because they are either idle, full, running another version of "
+"the game, etc."
+msgstr ""
+"Choisissez un serveur pour vous y connecter, tous les noeuds auxquels vous "
+"pouvez techniquement vous connecter sont listés, ceci dit il se peut que la "
+"connexion soit impossible parce qu'ils sont inactifs, complets, dans une "
+"version incompatible, etc."
+
+#: src/scriptpo.c:59
+msgid "Network does NOT work yet"
+msgstr "Le réseau ne fonctionne PAS ENCORE"
+
+#: src/scriptpo.c:60
+msgid "Subfolder with ~a maps"
+msgstr "Sous-répertoire avec ~a tableaux"
+
+#: src/scriptpo.c:61
+msgid "You can't play this map yet"
+msgstr "Vous ne pouvez pas encore jouer à ce tableau"
+
+#: src/scriptpo.c:62
+msgid "Author"
+msgstr "Auteur"
+
+#: src/scriptpo.c:64 src/scriptpo.c:228
+msgid "License"
+msgstr "Licence"
+
+#: src/scriptpo.c:65 src/scriptpo.c:186
+msgid "Choose map"
+msgstr "Choisir le tableau"
+
+#: src/scriptpo.c:66
+msgid "Browse your hard drive to find a map"
+msgstr "Parcourez votre disque pour choisir un tableau"
+
+#: src/scriptpo.c:67
+#, fuzzy
+msgid "Browse maps"
+msgstr "Choisir le tableau"
+
+#: src/scriptpo.c:68 src/scriptpo.c:187
+msgid "Browse map directory and choose a map to play on"
+msgstr "Parcourir l'arborescence et choisir un tableau pour jouer dessus"
+
+#: src/scriptpo.c:69
+#, fuzzy
+msgid "Random map"
+msgstr "Aléatoire"
+
+#: src/scriptpo.c:70
+msgid "Play on a randomly generated map"
+msgstr ""
+
+#: src/scriptpo.c:72
+msgid "Choose the map you want to play on"
+msgstr ""
+
+#: src/scriptpo.c:73
+msgid "No sound FX"
+msgstr "Pas de bruitages"
+
+#: src/scriptpo.c:74
+msgid "Sound FX ~a%"
+msgstr "Bruitages ~a%"
+
+#: src/scriptpo.c:75
+msgid ""
+"Change volume for sound FX, this includes all sounds but music and "
+"background water sound"
+msgstr ""
+"Change le volume des effets sonores, sauf la musique et le bruit de fond "
+"aquatique"
+
+#: src/scriptpo.c:76
+msgid "No water sounds"
+msgstr "Pas de bruits d'eau"
+
+#: src/scriptpo.c:77
+msgid "Water sounds ~a%"
+msgstr "Bruits d'eau ~a%"
+
+#: src/scriptpo.c:78
+msgid ""
+"Change volume for water sound, the bubbling sound you can here in the "
+"background"
+msgstr "Change le volume du bruit de fond aquatique"
+
+#: src/scriptpo.c:79
+msgid "No music"
+msgstr "Pas de musique"
+
+#: src/scriptpo.c:80
+msgid "Music ~a%"
+msgstr "Musique ~a%"
+
+#: src/scriptpo.c:81
+msgid "Change music volume"
+msgstr "Changer le volume de la musique"
+
+#: src/scriptpo.c:82 src/scriptpo.c:145
+msgid "Backend ~a"
+msgstr "Moteur ~a"
+
+#: src/scriptpo.c:83
+msgid ""
+"The sound backend is the library used to play sounds, if in doubt, don't "
+"touch"
+msgstr ""
+"Le moteur de son est la bibliothèque technique utilisée, en cas de doute, "
+"n'y touchez pas"
+
+#: src/scriptpo.c:84 src/scriptpo.c:242
+msgid "Sound options"
+msgstr "Options son"
+
+#: src/scriptpo.c:85
+msgid "Change volumes and audio settings here"
+msgstr "Changez le volume et les options audios ici"
+
+#: src/scriptpo.c:86
+msgid "One life (last wins)"
+msgstr "Une seule vie (dernier gagne)"
+
+#: src/scriptpo.c:87
+msgid "Respawn (deatchmatch)"
+msgstr "Les équipes revivent (DM)"
+
+#: src/scriptpo.c:88
+msgid ""
+"Choose wether you want the game to end when everyone is dead but the winner "
+"or if you prefer to keep playing until time limit, with teams respawning"
+msgstr ""
+"Choisissez si vous préférez que le jeu s'arrête quand tout le monde est mort "
+"sauf (logiquement...) le vainqueur, ou si vous préférez compter les frags."
+
+#: src/scriptpo.c:89
+msgid "All teams are equal"
+msgstr "Équipes équivalentes"
+
+#: src/scriptpo.c:90
+msgid "Use team profiles"
+msgstr "Utiliser les profils"
+
+#: src/scriptpo.c:91
+msgid ""
+"Team profiles can really change the game, depending on your color you could "
+"move faster or slower, have a stronger or weaker attack, and so on"
+msgstr ""
+"Les profils d'équipe peuvent vraiment changer le jeu, solon votre couleur "
+"vous pouvez vous déplacer plus ou moins vite, attaquer plus ou moins fort, "
+"et ainsi de suite"
+
+#: src/scriptpo.c:92
+msgid "Armies ~a% - ~a%"
+msgstr "Armées ~a% - ~a%"
+
+#: src/scriptpo.c:93
+msgid ""
+"Defines how crowded the battlefield is, if you raise this, there will be a "
+"lot of fighters in a limited space"
+msgstr ""
+"Définit la densité des équipes, avec une valeur forte les armées seront "
+"grosses, avec une valeur faible elles occupent peu d'espace"
+
+#: src/scriptpo.c:94 src/scriptpo.c:98
+msgid "Rules"
+msgstr "Règles"
+
+#: src/scriptpo.c:95
+msgid ""
+"Changing rules will modify the gameplay, you can also be curious, read the "
+"documentation and try config file and command line options"
+msgstr ""
+"Changer les règles ici modifie la nature du jeu, vous pouvez aussi être "
+"curieux et lire la documentation, il y a plein d'autres options dans le "
+"fichier de configuration"
+
+#: src/scriptpo.c:96 src/scriptpo.c:135
+msgid "Time & speed"
+msgstr "Temps et vitesse"
+
+#: src/scriptpo.c:97
+msgid "Define how long the game lasts, and how fast it is"
+msgstr "Définit la durée du jeu, et sa vitesse"
+
+#: src/scriptpo.c:99
+msgid ""
+"Modify the gameplay, note that config file and command-line options allow "
+"you to change many more things"
+msgstr ""
+"Modification du 'gameplay', à noter que le fichier de configuration et la "
+"ligne de commande permettent un contrôle encore plus précis"
+
+#: src/scriptpo.c:100
+msgid "Video"
+msgstr "Vidéo"
+
+#: src/scriptpo.c:101
+msgid "Resolution and fullscreen vs windowed modes"
+msgstr "Résolution et mode plein écran ou fenêtré"
+
+#: src/scriptpo.c:102 src/scriptpo.c:238
+msgid "Sound"
+msgstr "Son"
+
+#: src/scriptpo.c:103
+msgid "Audio settings"
+msgstr "Réglages audio"
+
+#: src/scriptpo.c:104
+msgid "System"
+msgstr "Système"
+
+#: src/scriptpo.c:105
+msgid "Advanced system stuff"
+msgstr "Trucs système avancés"
+
+#: src/scriptpo.c:106
+msgid "Stop current game"
+msgstr "Arrêter le jeu en cours"
+
+#: src/scriptpo.c:107
+msgid "Return to parent menu"
+msgstr "Retourner au menu parent"
+
+#: src/scriptpo.c:108 src/scriptpo.c:110 src/scriptpo.c:190 src/scriptpo.c:222
+#: src/scriptpo.c:236
+msgid "Options"
+msgstr "Options"
+
+#: src/scriptpo.c:109
+msgid ""
+"Change options here, but player settings and map choosing are done elsewhere"
+msgstr ""
+"Changez les options ici, les options des joueurs et le choix du tableau se "
+"font ailleurs"
+
+#: src/scriptpo.c:111
+msgid "Change options"
+msgstr "Changer les ptions"
+
+#: src/scriptpo.c:112
+msgid "Display FPS"
+msgstr "Montrer les FPS"
+
+#: src/scriptpo.c:113
+msgid "FPS hidden"
+msgstr "FPS cachés"
+
+#: src/scriptpo.c:114
+msgid "Use this to check how fast your display is"
+msgstr "À utiliser pour savoir si votre affichage est rapide"
+
+#: src/scriptpo.c:115
+msgid "Display MPS"
+msgstr "Montrer les MPS"
+
+#: src/scriptpo.c:116
+msgid "MPS hidden"
+msgstr "MPS cachés"
+
+#: src/scriptpo.c:117
+msgid ""
+"MPS stands for Moves Per Second, displaying this might reveal some slowing "
+"down in gameplay"
+msgstr ""
+"MPS correspond à 'Moves Per Second', afficher ceci peut mettre en évidence "
+"des ralentissements du jeu"
+
+#: src/scriptpo.c:118
+msgid "Verbose display"
+msgstr "Mode bavard"
+
+#: src/scriptpo.c:119
+msgid "Clean display"
+msgstr "Pas de blabla"
+
+#: src/scriptpo.c:120
+msgid "Do you want breadcrumbs, help and tooltips to be displayed?"
+msgstr "Voulez-vous afficher le fil d'ariane, l'aide et les conseils?"
+
+#: src/scriptpo.c:121
+msgid "Console enabled"
+msgstr "Console activée"
+
+#: src/scriptpo.c:122
+msgid "Console disabled"
+msgstr "Console éteinte"
+
+#: src/scriptpo.c:123
+msgid ""
+"Console is a Guile interpreter which will allow you to type any command "
+"interactively, use at your own risk"
+msgstr ""
+"La console est un interpréteur Guile qui vous permet de lancer des commandes "
+"directement, à vos risques et périls"
+
+#: src/scriptpo.c:124
+msgid "System options"
+msgstr "Options système"
+
+#: src/scriptpo.c:125
+msgid "All those weird options and tweaks you can live without"
+msgstr "Toutes ces options bizarres dont vous pouvez vous passer"
+
+#: src/scriptpo.c:126
+msgid "Time ~a:~a~a:~a~a"
+msgstr "Temps ~a:~a~a:~a~a"
+
+#: src/scriptpo.c:127
+msgid "Defines how long the game will last, this is a maximum limit"
+msgstr "Définit la durée du jeu, c'est une limite maxi"
+
+#: src/scriptpo.c:128
+msgid "Default speed"
+msgstr "Vitesse par défaut"
+
+#: src/scriptpo.c:129
+msgid "Speed x~a"
+msgstr "Vitesse x~a"
+
+#: src/scriptpo.c:130
+msgid "Speed ~a%"
+msgstr "Vitesse ~a%"
+
+#: src/scriptpo.c:131
+msgid "Unknown speed"
+msgstr "Vitesse inconnue"
+
+#: src/scriptpo.c:132
+msgid ""
+"Defines the global speed of the game, if set to a high value, there will be "
+"more moves per second"
+msgstr ""
+"Définit la vitesse générale du jeu, si vous choisissez une valeur élevée, ça "
+"ira plus vite"
+
+#: src/scriptpo.c:133
+msgid "Bench ~a"
+msgstr "Marque ~a"
+
+#: src/scriptpo.c:134
+msgid ""
+"Bench is counted in an arbitrary unit, it gives a global idea of how fast "
+"your computer is, as far as this game is concerned"
+msgstr ""
+"Le 'bench' est compté dans une unité arbitraire, plus c'est grand, plus ça "
+"veut dire que votre ordinateur est rapide, du point de vue du jeu"
+
+#: src/scriptpo.c:136
+msgid "Shorten and/or accelerate your games"
+msgstr "Ralentir ou accélérer le jeu"
+
+#: src/scriptpo.c:137 src/scriptpo.c:240
+msgid "Fullscreen"
+msgstr "Plein écran"
+
+#: src/scriptpo.c:138
+msgid "Windowed"
+msgstr "Fenêtré"
+
+#: src/scriptpo.c:139
+msgid "Use this to toggle between windowed and fullscreen mode"
+msgstr "Utilisez ceci pour basculer entre le mode fenêtré et plein écran"
+
+#: src/scriptpo.c:140
+msgid "Low res"
+msgstr "Basse rés."
+
+#: src/scriptpo.c:141
+msgid "Standard res"
+msgstr "Rés. standard"
+
+#: src/scriptpo.c:142
+msgid "High res"
+msgstr "Haute rés."
+
+#: src/scriptpo.c:143
+msgid "User res"
+msgstr "Rés. util."
+
+#: src/scriptpo.c:144
+msgid ""
+"Change the window size, in windowed mode you could just resize it with the "
+"mouse"
+msgstr ""
+"Changer la taille de l'affichage, en mode fenêtré vous pouvez aussi le faire "
+"à la souris"
+
+#: src/scriptpo.c:146
+msgid ""
+"The graphics backend is the library used for rendering images, if in doubt, "
+"don't touch"
+msgstr ""
+"Le moteur graphique est la bibliothèque technique utilisée pour l'affichage, "
+"en cas de doute, n'y touchez pas"
+
+#: src/scriptpo.c:147
+msgid "Video options"
+msgstr "Options vidéos"
+
+#: src/scriptpo.c:148
+msgid "Change screen resolution, video mode, ..."
+msgstr "Changer la résolution de l'écran, le mode vidéo, ..."
+
+#: src/scriptpo.c:149
+msgid "Not playing"
+msgstr "Ne joue pas"
+
+#: src/scriptpo.c:150
+msgid "Activate or disable a human player"
+msgstr "Activer ou désactiver un joueur humain"
+
+#: src/scriptpo.c:151
+msgid "Choose the control device"
+msgstr "Choisissez le mode de contrôle"
+
+#: src/scriptpo.c:152
+msgid "Change options for player ~a"
+msgstr "Changer les options pour le joueur ~a"
+
+#: src/scriptpo.c:153
+msgid "Free slot"
+msgstr "Libre"
+
+#: src/scriptpo.c:154
+msgid "Name"
+msgstr "Nom"
+
+#: src/scriptpo.c:155
+msgid "Color"
+msgstr "Couleur"
+
+#: src/scriptpo.c:157
+msgid "You can create a new player here"
+msgstr "Vous pouvez créer un nouveau joueur ici"
+
+#: src/scriptpo.c:158
+msgid "No bots"
+msgstr "Pas de bots"
+
+#: src/scriptpo.c:159
+msgid "One bot"
+msgstr "Un seul bot"
+
+#: src/scriptpo.c:160
+msgid "~a bots"
+msgstr "~a bots"
+
+#: src/scriptpo.c:161
+msgid "Put up to ~a bots on your map"
+msgstr "Mettre jusqu'à ~a ordis dans le tableau"
+
+#: src/scriptpo.c:162 src/scriptpo.c:188
+msgid "Players"
+msgstr "Joueurs"
+
+#: src/scriptpo.c:163
+msgid "Change player options"
+msgstr "Changer les options du joueur"
+
+#: src/scriptpo.c:164
+msgid "Solo game"
+msgstr "Jeu solo"
+
+#: src/scriptpo.c:165
+msgid ""
+"Play alone against the computer, try and win levels to get access to new "
+"colors and weapons"
+msgstr ""
+"Jouer seul contre l'ordinateur, le but est de gagner les niveaux pour "
+"accéder à de nouvelles couleurs et armes spéciales"
+
+#: src/scriptpo.c:166
+msgid "1 on 1"
+msgstr "1 contre 1"
+
+#: src/scriptpo.c:167
+msgid "Play with a friend locally on this computer"
+msgstr "Jouer en local avec un ami sur cet ordinateur"
+
+#: src/scriptpo.c:168
+msgid "Local multiplayer"
+msgstr "Jeu local à plusieurs"
+
+#: src/scriptpo.c:169
+msgid "Start a local multiplayer session, with up to 4 players, plus some bots"
+msgstr "Démarrer un jeu multi en local, jusqu'à 4 joueurs, plus des ordis"
+
+#: src/scriptpo.c:170
+msgid "Join network game"
+msgstr "Se connecter"
+
+#: src/scriptpo.c:171
+msgid "Join an existing network game, DOES NOT WORK YET"
+msgstr "Rejoindre un jeu existant, NE FONCTIONNE PAS POUR L'INSTANT"
+
+#: src/scriptpo.c:172
+msgid "Start server"
+msgstr "Démarrer un serveur"
+
+#: src/scriptpo.c:173
+msgid "Start a server, DOES NOT WORK YET"
+msgstr "Démarrer un serveur, NE FONCTIONNE PAS POUR L'INSTANT"
+
+#: src/scriptpo.c:174
+msgid "Demo"
+msgstr "Démo"
+
+#: src/scriptpo.c:175
+msgid "Watch the AI play against itself"
+msgstr "Regarder l'ordinateur jouer contre lui-même"
+
+#: src/scriptpo.c:176
+msgid "Back to main menu"
+msgstr "Menu principal"
+
+#: src/scriptpo.c:177
+msgid "Go back to main menu"
+msgstr "Retourner au menu principal"
+
+#: src/scriptpo.c:178 src/scriptpo.c:180 src/scriptpo.c:184
+msgid "Play"
+msgstr "Jouer"
+
+#: src/scriptpo.c:179
+msgid "Choose your game type"
+msgstr "Choisissez votre type de jeu"
+
+#: src/scriptpo.c:181
+msgid "Choose your game type and play with chosen map"
+msgstr "Choisissez votre type de jeu et jouez avec le tableau choisi"
+
+#: src/scriptpo.c:182 src/scriptpo.c:217 src/scriptpo.c:224
+msgid "Quick start"
+msgstr "Jouer tout de suite"
+
+#: src/scriptpo.c:183
+msgid "Start playing now!"
+msgstr "Jouer maintenant!"
+
+#: src/scriptpo.c:185
+msgid "Start a new game"
+msgstr "Démarrer un nouveau jeu"
+
+#: src/scriptpo.c:189
+msgid ""
+"Choose player name, color (teams), controls (keyboard, mouse, joystick) and "
+"populate your map with bots"
+msgstr ""
+"Choisissez un nom de joueur, une couleur (équipe), un mode de contrôle "
+"(clavier, souris, joystick) et ajoutez des ordis sur le tableau"
+
+#: src/scriptpo.c:191
+msgid "Set up video, sound, game rules, and more"
+msgstr "Définir les options vidéo, son, les règles, et plus"
+
+#: src/scriptpo.c:192 src/scriptpo.c:216
+msgid "Liquid War 6"
+msgstr "Liquid War 6"
+
+#: src/scriptpo.c:193
+msgid "Welcome to Liquid War 6, have fun!"
+msgstr "Bienvenue dans Liquid War 6, amusez-vous bien!"
+
+#: src/scriptpo.c:194
+msgid "Replay"
+msgstr "Rejouer"
+
+#: src/scriptpo.c:195
+msgid "Replay this level"
+msgstr "Rejouer ce niveau"
+
+#: src/scriptpo.c:196
+msgid "Continue"
+msgstr "Continuer"
+
+#: src/scriptpo.c:197
+msgid "Advance to next level"
+msgstr "Aller au niveau suivant"
+
+#: src/scriptpo.c:198
+msgid "Back to previous menu"
+msgstr "Retour au menu principal"
+
+#: src/scriptpo.c:199
+msgid "Go back to previous menu"
+msgstr "Retour au menu précédent"
+
+#: src/scriptpo.c:200 src/scriptpo.c:202
+msgid "Next"
+msgstr "La suite"
+
+#: src/scriptpo.c:201 src/scriptpo.c:203
+msgid "And now?"
+msgstr "Et maintenant?"
+
+#: src/scriptpo.c:204
+msgid "New color available"
+msgstr "Nouvelle couleur disponible"
+
+#: src/scriptpo.c:205 src/scriptpo.c:207
+msgid "Score"
+msgstr "Score"
+
+#: src/scriptpo.c:206 src/scriptpo.c:208
+msgid "~a wins"
+msgstr "~a gagne"
+
+#: src/scriptpo.c:209
+msgid "You win!"
+msgstr "C'est gagné!"
+
+#: src/scriptpo.c:210
+msgid "You loose..."
+msgstr "Perdu..."
+
+#: src/scriptpo.c:211 src/scriptpo.c:212
+msgid "Please wait..."
+msgstr "Patience..."
+
+#: src/scriptpo.c:213
+msgid "Exit?"
+msgstr "Fin?"
+
+#: src/scriptpo.c:214
+msgid "Exit"
+msgstr "Fin"
+
+#: src/scriptpo.c:215
+msgid "Resume LW6"
+msgstr "Retourner à LW6"
+
+#: src/scriptpo.c:218
+msgid "Local game"
+msgstr "Jeu local"
+
+#: src/scriptpo.c:219
+msgid "Network game"
+msgstr "Jeu réseau"
+
+#: src/scriptpo.c:220 src/scriptpo.c:235
+msgid "Level"
+msgstr "Tableau"
+
+#: src/scriptpo.c:221
+msgid "Teams"
+msgstr "Equipe"
+
+#: src/scriptpo.c:223 src/scriptpo.c:225
+msgid "About"
+msgstr "A propos"
+
+#: src/scriptpo.c:226
+msgid "Authors"
+msgstr "Auteurs"
+
+#: src/scriptpo.c:227
+msgid "Copyright"
+msgstr "Copyright"
+
+#: src/scriptpo.c:230
+msgid "View level"
+msgstr "Voir le tableau"
+
+#: src/scriptpo.c:231
+msgid "Confirm level choice"
+msgstr "Confirmer le choix du tableau"
+
+#: src/scriptpo.c:232
+msgid "Choose it"
+msgstr "Le choisir"
+
+#: src/scriptpo.c:233
+msgid "View"
+msgstr "Voir"
+
+#: src/scriptpo.c:234
+msgid "Cancel"
+msgstr "Annuler"
+
+#: src/scriptpo.c:237
+msgid "Graphics"
+msgstr "Vidéo"
+
+#: src/scriptpo.c:239
+msgid "Graphics options"
+msgstr "Options vidéo"
+
+#: src/scriptpo.c:241 src/scriptpo.c:246
+msgid "Graphics backend"
+msgstr "Moteur graphique"
+
+#: src/scriptpo.c:243
+msgid "Sound fx volume"
+msgstr "Volume bruitages"
+
+#: src/scriptpo.c:244
+msgid "Music volume"
+msgstr "Volume musique"
+
+#: src/scriptpo.c:245 src/scriptpo.c:247
+msgid "Sound backend"
+msgstr "Moteur de son"
+
+#: src/scriptpo.c:248
+msgid "Dummy test node"
+msgstr "Noeud de test bidon"
+
+#: src/scriptpo.c:249
+#, fuzzy
+msgid "Dummy test node A"
+msgstr "Noeud de test bidon"
+
+#: src/scriptpo.c:250
+#, fuzzy
+msgid "Dummy test node B"
+msgstr "Noeud de test bidon"
+
+#: src/scriptpo.c:251
+#, fuzzy
+msgid "Dummy test node C"
+msgstr "Noeud de test bidon"
+
+#~ msgid "Join us now!"
+#~ msgstr "Rejoignez-nous!"
+
+#~ msgid "Stamp %s, Id %d"
+#~ msgstr "Stamp %s, Id %d"
